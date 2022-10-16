@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 /*
@@ -22,7 +23,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth','isAdmin'])->group(function () {
-    Route::get('/dashboard', function () {
-        return "This is Admin";
-     });
+    Route::get('/dashboard', 'Admin\FrontendController@index');
+    // Category
+    Route::get('categories', 'Admin\CategoryController@index');
+    Route::get('add-category', 'Admin\CategoryController@add');
+    Route::post('insert-category', 'Admin\CategoryController@insert');
 });
