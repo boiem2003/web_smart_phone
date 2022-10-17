@@ -79,6 +79,6 @@ class CategoryController extends Controller
             }
         }
         $category->delete();
-        return redirect('categories') -> with('status',"Category Delete Successfully");
+        return redirect('category') -> with('status',"Category Delete Successfully")
     }
 }

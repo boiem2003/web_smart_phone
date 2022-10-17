@@ -5,8 +5,8 @@
             <h4>Add category</h4>
         </div>
         <div class="card-body">
-            <form action ="{{ url('insert-category') }}" method = "PUT" enctype="multipart/form-data">
-                @csrf
+            <form action ="{{ url('insert-category') }}" method = "POST" enctype="multipart/form-data">
+                @csrf  
                 @method('PUT')
                 <div class="row">
                     <div class="col-md-6">

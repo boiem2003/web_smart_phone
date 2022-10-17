@@ -55,7 +55,7 @@ class CategoryController extends Controller
             $file= $request->file ('image');
             $ext= $file->getclientoriginalExtension();
             $filename= time().'.'.$ext;
-            $file->move('assets/uploads/category',$filename) ;
+            $file->move('assets/uploads/category'.$filename) ;
             $category->image=$filename;
         }
         $category->name= $request->input('name');
@@ -66,19 +66,7 @@ class CategoryController extends Controller
         $category->meta_title= $request->input('meta_title');
         $category->meta_keywords= $request->input('meta_keywords');
         $category->meta_descrip= $request->input('meta_description');
-        $category->update();
+        $category->updated();
         return redirect('dashboard') -> with('status', "Category Updated Successfully");
-    }
-    public function destroy($id)
-    {
-        $category = Category::find($id);
-        if($category -> image) {
-            $path = 'assets/uploads/category'.$category ->image;
-            if(File::exists($path)) {
-                File::delete($path);
-            }
-        }
-        $category->delete();
-        return redirect('categories') -> with('status',"Category Delete Successfully");
     }
 }

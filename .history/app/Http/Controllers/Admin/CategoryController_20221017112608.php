@@ -78,7 +78,6 @@ class CategoryController extends Controller
                 File::delete($path);
             }
         }
-        $category->delete();
-        return redirect('categories') -> with('status',"Category Delete Successfully");
+        $category->delete
     }
 }

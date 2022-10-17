@@ -72,13 +72,6 @@ class CategoryController extends Controller
     public function destroy($id)
     {
         $category = Category::find($id);
-        if($category -> image) {
-            $path = 'assets/uploads/category'.$category ->image;
-            if(File::exists($path)) {
-                File::delete($path);
-            }
-        }
-        $category->delete();
-        return redirect('categories') -> with('status',"Category Delete Successfully");
+        if($category -> image)
     }
 }
