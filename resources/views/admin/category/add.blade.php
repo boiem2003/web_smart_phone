@@ -8,7 +8,6 @@
             <form action ="{{ url('insert-category') }}" method = "POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-6">
                         <label for="">Name</label>
@@ -44,6 +43,8 @@
                     </div>
                     <div class="col-md-12">
                         <input type="file" name="image" class="form-control">
+                    <div class="col-md-12 mb-3">
+                    <input type="file" name="image" class="form-control">
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Submit</button>
@@ -53,3 +54,5 @@
         </div>
     </div>
 @endsection
+
+
