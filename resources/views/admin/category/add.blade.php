@@ -5,7 +5,7 @@
             <h4>Add category</h4>
         </div>
         <div class="card-body">
-            <form action ="{{ url('insert-category') }}" method = "PUT" enctype="multipart/form-data">
+            <form action ="{{ url('insert-category') }}" method = "POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="row">
@@ -41,7 +41,7 @@
                         <label for="">Meta Description </label>
                         <textarea name="meta_description" rows="3" class="form-control"></textarea>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-12 mb-3">
                     <input type="file" name="image" class="form-control">
                     </div>
                     <div class="col-md-12">

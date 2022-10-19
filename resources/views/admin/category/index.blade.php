@@ -1,4 +1,5 @@
 @extends('layouts.admin');
+
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -23,10 +24,10 @@
                             <td>{{ $item -> name }}</td>
                             <td>{{ $item -> description }}</td>
                             <td>
-                                <img src="{{ asset('assets/uploads/products/'.$item -> image) }}" class="cate-image" alt="Image Here">
+                                <img src="{{ asset('assets/uploads/category/'.$item -> image) }}" class="cate-image" alt="Image Here">
                             </td>
                             <td>
-                                <a href="{{ url('edit-categoy/'.$item -> id)}}" class="btn btn-primary">Edit</a>
+                                <a href="{{ url('edit-category/'.$item -> id)}}" class="btn btn-primary">Edit</a>
                                 <a href="{{ url('delete-category/'.$item -> id) }}" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
