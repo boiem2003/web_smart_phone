@@ -4,8 +4,8 @@
 
         Tip 2: you can also add an image using data-image tag
       -->
-      <div class="logo"><a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+      <div class="logo"><a href="http://127.0.0.1:8000/" class="simple-text logo-normal">
+          STORE SMART PHONE
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
@@ -43,11 +43,6 @@
             <a class="nav-link" href="./tables.html">
               <i class="material-icons">content_paste</i>
               <p>Table List</p>
-            </a>
-          </li>
-            <a class="nav-link" href="./upgrade.html">
-              <i class="material-icons">unarchive</i>
-              <p>Upgrade to PRO</p>
             </a>
           </li>
         </ul>
