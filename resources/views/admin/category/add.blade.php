@@ -41,11 +41,13 @@
                         <label for="">Meta Description </label>
                         <textarea name="meta_description" rows="3" class="form-control"></textarea>
                     </div>
+                    <div class="col-md-12">
+                        <input type="file" name="image" class="form-control">
                     <div class="col-md-12 mb-3">
                     <input type="file" name="image" class="form-control">
                     </div>
                     <div class="col-md-12">
-                        <button type="submit " class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </form>

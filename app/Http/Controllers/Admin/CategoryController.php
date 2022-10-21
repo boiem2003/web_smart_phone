@@ -18,12 +18,14 @@ class CategoryController extends Controller
     }
     public function insert(Request $request){
         $category= new Category();
-        if($request-> hasFile ('image')){
-            $file= $request->file ('image');
-            $ext= $file->getclientoriginalExtension();
+        if($request -> hasFile ('image')){
+            $file= $request->file ('image'); 
+            $ext= $file->getClientOriginalExtension();
             $filename= time().'.'.$ext;
             $file->move('assets/uploads/category',$filename);
             $category->image=$filename;
+        }else{
+            $category->image=$request -> hasfile('image')+"123";
         }
         $category->name= $request->input('name');
         $category->slug= $request->input('slug');
@@ -55,7 +57,7 @@ class CategoryController extends Controller
             $file= $request->file ('image');
             $ext= $file->getclientoriginalExtension();
             $filename= time().'.'.$ext;
-            $file->move('assets/uploads/category',$filename) ;
+            $file->move('assets/uploads/category',$filename);
             $category->image=$filename;
         }
         $category->name= $request->input('name');
