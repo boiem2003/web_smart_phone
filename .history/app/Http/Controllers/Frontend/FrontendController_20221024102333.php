@@ -36,14 +36,13 @@ class FrontendController extends Controller
         {
             if(Product::where('slug', $prod_slug)->exists())
             {
-                $products = Product::where('slug', $prod_slug)->first();
+                $products = Product::where('slug', $prod_slug) -> first();
                 return view('frontend.products.view', compact('products'));
             }
             else {
                 return redirect('/')->with('status', "The link was broken");
             }
-        }
-        else {
+        } else {
             return redirect('/')->with('status', "No such category found");
         }
 
