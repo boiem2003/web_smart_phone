@@ -72,11 +72,12 @@
 @section('scripts')
 <script>
     $(document).ready(function () {
+
         $('.addToCartBtn').click(function (e){
             e.preventDefault();
 
-            var product_id = $(this).closest('.prod_data').find('.prod_id').val();
-            var product_qty = $(this).closest('.prod_data').find('.qty-input').val();
+            var product_id = $(this).closest('.product_data').find('.prod_id').val();
+            var product_qty = $(this).closest('.product_data').find('.qty-input').val();
           
             $.ajaxSetup({
                 headers: {
@@ -93,7 +94,7 @@
             },
             success: function (response) {
                 swal(response.status);
-
+ 
             }
            });
         });
