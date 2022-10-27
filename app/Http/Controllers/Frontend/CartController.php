@@ -23,7 +23,6 @@ class CartController extends Controller
             {
                 if(Cart::where('prod_id', $product_id)->where('user_id', Auth::id())->exists())
                 {
-<<<<<<< HEAD
                     return response()->json(['status'=> $prod_check->name."Already added to cart"]);
 =======
                     if(Cart::where('prod_id', $product_id)->where('user_id', Auth::id())->exists())
@@ -41,7 +40,6 @@ class CartController extends Controller
 
                     }
                     }
->>>>>>> 4145724182bae299eb53c0a9db191835a707c491
                 }
                 else
                 {
