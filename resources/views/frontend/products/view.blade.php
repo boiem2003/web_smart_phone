@@ -66,6 +66,7 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 
 @endsection
 
@@ -124,4 +125,6 @@
         });
     });
 </script>
+=======
+>>>>>>> 4145724182bae299eb53c0a9db191835a707c491
 @endsection

@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Oct 26, 2022 at 10:29 AM
+=======
+-- Generation Time: Oct 27, 2022 at 10:00 AM
+>>>>>>> 4145724182bae299eb53c0a9db191835a707c491
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -36,6 +40,17 @@ CREATE TABLE `carts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
+=======
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `updated_at`) VALUES
+(4, '4', '5', '9', '2022-10-26 23:49:45', '2022-10-27 00:59:02'),
+(5, '4', '6', '1', '2022-10-27 00:58:19', '2022-10-27 00:58:19');
+
+>>>>>>> 4145724182bae299eb53c0a9db191835a707c491
 -- --------------------------------------------------------
 
 --
@@ -202,7 +217,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 (1, 'NCThanh', 'user@user.com', NULL, '$2y$10$w0axIBdFlhxeRJdn1BZ2vezxEyDailHwTe8HTNs8NYnIXYyJKw78e', 1, NULL, '2022-10-15 05:17:20', '2022-10-15 05:17:20'),
 (2, 'dangkhoa', 'nguyendkhoa147@gmail.com', NULL, '$2y$10$S879/v2GI7TbZcDqvaapJeXs7AwWzqpO3o9F42zHYZegYoKOY4wu.', 1, NULL, '2022-10-16 04:11:17', '2022-10-16 04:11:17'),
 (3, 'thao', 'Thao@gmail.com', NULL, '$2y$10$toh1ybs/X4TyNiYiWfgPxOLfmerJGTEGtnDPIRX.8sLJcnWr.b7VG', 1, NULL, '2022-10-16 23:18:00', '2022-10-16 23:18:00'),
-(4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$mXStWWe8XkQuO5naUTjIouuM8/tNo885foRUuMesQDW1nXzwk1Pj6', 1, NULL, '2022-10-17 22:36:21', '2022-10-17 22:36:21');
+(4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$mXStWWe8XkQuO5naUTjIouuM8/tNo885foRUuMesQDW1nXzwk1Pj6', 0, NULL, '2022-10-17 22:36:21', '2022-10-17 22:36:21');
 
 --
 -- Indexes for dumped tables
@@ -268,7 +283,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+>>>>>>> 4145724182bae299eb53c0a9db191835a707c491
 
 --
 -- AUTO_INCREMENT for table `categories`

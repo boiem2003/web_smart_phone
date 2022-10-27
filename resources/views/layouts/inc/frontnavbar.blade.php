@@ -13,6 +13,9 @@
           <a class="nav-link" href="{{ url('category') }}">Category</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" href="{{ url('cart') }}">Cart</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
         <li class="nav-item">
