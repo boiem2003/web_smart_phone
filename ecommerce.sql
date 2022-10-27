@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2022 at 08:33 AM
+-- Generation Time: Oct 27, 2022 at 10:00 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `ecommerce`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_qty` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `updated_at`) VALUES
+(4, '4', '5', '9', '2022-10-26 23:49:45', '2022-10-27 00:59:02'),
+(5, '4', '6', '1', '2022-10-27 00:58:19', '2022-10-27 00:58:19');
 
 -- --------------------------------------------------------
 
@@ -91,7 +114,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
 (5, '2022_10_16_072918_create_categories_table', 2),
-(6, '2022_10_17_074652_create_products_table', 3);
+(6, '2022_10_17_074652_create_products_table', 3),
+(7, '2022_10_24_074822_create_carts_table', 4);
 
 -- --------------------------------------------------------
 
@@ -156,8 +180,8 @@ CREATE TABLE `products` (
 
 INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `tax`, `status`, `trending`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
 (3, 8, 'oppo reno8', 'oppo', 'OPPO Reno8 có thiết kế nguyên khối, màn hình AMOLED 6.43 inch, độ phân giải Full HD+. Máy chạy trên hệ điều hành Android 12 và hoạt động tốt nhờ chipset MediaTek Dimensity 1300 8 nhân. Camera chính 50MP, dung lượng pin 4500mAh và hỗ trợ sạc nhanh lên đến 80W', 'OPPO Reno8 - chuyên gia chụp ảnh chân dung hàng đầu nhờ sự kết hợp giữa cảm biến cao cấp Sony IMX709(camera trước) và IMX766(camera sau) với ống kính Micro30x. Ngoài ra, phiên bản Reno 8 mang lại cho người dùng khả năng cân bằng cuộc sống theo khung giờ 8 tiếng giúp làm việc hiệu quả và nghỉ ngơi đầy đủ. Hiệu năng mà OPPO Reno 8 sở hữu 8GB RAM, 256GB bộ nhớ trong đi cùng với vi xử lý MediaTek Dimensity 1300 giúp tối ưu các tác vụ hiệu quả cùng hiệu năng chơi game đỉnh cao.', '8990000', '8690000', '1666168996.png', '100', '100', 0, 0, 'OPPO Reno8', 'OPPO Reno8, oppo new', 'Chuyên gia chân dung, bừng sáng khoảnh khắc đêm - Cụm camera 64MP + 2MP + 2MP hiện đại\r\nDẫn đầu xu hướng nhờ thiết kế tinh xảo, cao cấp và mỏng nhẹ, phù hợp với trải nghiệm hàng ngày\r\nSạc nhanh siêu tốc, tràn đầy năng lượng cho cả ngày - Viên pin 4500mAh, Sạc nhanh siêu tốc 33W\r\nGấp đôi hiệu suất, xử lí mọi tác vụ - Con chip Qualcomm Snapdragon 680 mạnh mẽ trong phân khúc', '2022-10-19 01:43:16', '2022-10-19 01:43:16'),
-(5, 1, 'iphonedfgd', 'sdfsda', 'iPhone 13 Pro Max 512G - smartphone sở hữu hệ thống camera chuyên nghiệp tiên tiến nhất trên iPhone. Màn hình  Super Retina XDR với ProMotion tiết kiệm pin tối đa cùng chip A15 Bionic mạnh nhất từ trước tới giờ mang tới sự hài lòng trên mọi phương diện. Dung lượng khủng 512GB giúp bạn tha hồ sử dụng và lưu trữ. \r\n', 'dfg', '5654', '5436', '1666253443.jfif', '100', '456', 0, 1, 'drfg', 'dfg', 'dfg', '2022-10-20 01:10:43', '2022-10-20 01:10:43'),
-(6, 1, 'dfgd', 'dfg', 'iPhone 13 Pro Max 512G - smartphone sở hữu hệ thống camera chuyên nghiệp tiên tiến nhất trên iPhone. Màn hình  Super Retina XDR với ProMotion tiết kiệm pin tối đa cùng chip A15 Bionic mạnh nhất từ trước tới giờ mang tới sự hài lòng trên mọi phương diện. Dung lượng khủng 512GB giúp bạn tha hồ sử dụng và lưu trữ. ', 'dfg', '5453', '453', '1666253508.jfif', NULL, '45', 0, 1, 'sdfsd', 'dfg', 'jrt', '2022-10-20 01:11:48', '2022-10-20 01:11:48'),
+(5, 1, 'iphonedfgd', 'sdfsda', NULL, 'dfg', '5654', '5436', '1666253443.jfif', '150', '456', 0, 1, 'drfg', 'dfg', 'dfg', '2022-10-20 01:10:43', '2022-10-26 01:19:56'),
+(6, 1, 'dfgd', 'dfg', NULL, 'dfg', '5453', '453', '1666253508.jfif', '10', '45', 0, 1, 'sdfsd', 'dfg', 'jrt', '2022-10-20 01:11:48', '2022-10-26 01:15:12'),
 (7, 1, 'iphone 7', 'iphone', 'iPhone 13 Pro Max 512G - smartphone sở hữu hệ thống camera chuyên nghiệp tiên tiến nhất trên iPhone. Màn hình  Super Retina XDR với ProMotion tiết kiệm pin tối đa cùng chip A15 Bionic mạnh nhất từ trước tới giờ mang tới sự hài lòng trên mọi phương diện. Dung lượng khủng 512GB giúp bạn tha hồ sử dụng và lưu trữ. ', 'sdfsdf', '424', '42', '1666277114.jfif', '100', '4524', 1, 1, 'sdfsd', 'sdfs', 'sdf', '2022-10-20 07:45:14', '2022-10-20 07:45:14');
 
 -- --------------------------------------------------------
@@ -186,11 +210,17 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ro
 (1, 'NCThanh', 'user@user.com', NULL, '$2y$10$w0axIBdFlhxeRJdn1BZ2vezxEyDailHwTe8HTNs8NYnIXYyJKw78e', 1, NULL, '2022-10-15 05:17:20', '2022-10-15 05:17:20'),
 (2, 'dangkhoa', 'nguyendkhoa147@gmail.com', NULL, '$2y$10$S879/v2GI7TbZcDqvaapJeXs7AwWzqpO3o9F42zHYZegYoKOY4wu.', 1, NULL, '2022-10-16 04:11:17', '2022-10-16 04:11:17'),
 (3, 'thao', 'Thao@gmail.com', NULL, '$2y$10$toh1ybs/X4TyNiYiWfgPxOLfmerJGTEGtnDPIRX.8sLJcnWr.b7VG', 1, NULL, '2022-10-16 23:18:00', '2022-10-16 23:18:00'),
-(4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$mXStWWe8XkQuO5naUTjIouuM8/tNo885foRUuMesQDW1nXzwk1Pj6', 1, NULL, '2022-10-17 22:36:21', '2022-10-17 22:36:21');
+(4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$mXStWWe8XkQuO5naUTjIouuM8/tNo885foRUuMesQDW1nXzwk1Pj6', 0, NULL, '2022-10-17 22:36:21', '2022-10-17 22:36:21');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `categories`
@@ -243,6 +273,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
@@ -258,7 +294,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
