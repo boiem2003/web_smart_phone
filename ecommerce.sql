@@ -3,7 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
+<<<<<<< HEAD
 -- Generation Time: Oct 27, 2022 at 10:00 AM
+=======
+-- Generation Time: Oct 26, 2022 at 10:29 AM
+>>>>>>> 945acfba8e10f3615bcee744a61a1b6527fa6cd8
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -36,6 +40,7 @@ CREATE TABLE `carts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+<<<<<<< HEAD
 --
 -- Dumping data for table `carts`
 --
@@ -44,6 +49,8 @@ INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `upda
 (4, '4', '5', '9', '2022-10-26 23:49:45', '2022-10-27 00:59:02'),
 (5, '4', '6', '1', '2022-10-27 00:58:19', '2022-10-27 00:58:19');
 
+=======
+>>>>>>> 945acfba8e10f3615bcee744a61a1b6527fa6cd8
 -- --------------------------------------------------------
 
 --
@@ -276,7 +283,11 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
+<<<<<<< HEAD
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+=======
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+>>>>>>> 945acfba8e10f3615bcee744a61a1b6527fa6cd8
 
 --
 -- AUTO_INCREMENT for table `categories`
