@@ -33,7 +33,7 @@ $(document).ready(function () {
         value = isNaN(value) ? 0 : value;
         if(value < 10) 
         {
-            value++;
+            ++value;
             $(this).closest('.product_data').find('.qty-input').val(value);
         }
     });

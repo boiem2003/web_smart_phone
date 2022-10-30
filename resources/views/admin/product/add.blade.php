@@ -27,7 +27,7 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Small Description</label>
-                        <textarea name="description" rows="3" class="form-control"></textarea>
+                        <textarea name="small_description" rows="3" class="form-control"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Description</label>
@@ -47,9 +47,8 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for=""> Quanlity</label>
-                        <input type="number" class="form-control" name="sqty">
+                        <input type="number" class="form-control" name="qty">
                     </div>
-
                     <div class="col-md-6 mb-3">
                         <label for="">Status</label >
                         <input type="checkbox" name="status">

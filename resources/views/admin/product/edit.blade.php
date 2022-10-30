@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Small Description</label>
-                        <textarea name="description" class="form-control">{{ $products->small_description }}</textarea>
+                        <textarea name="small_description" class="form-control">{{ $products->small_description }}</textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Description</label>

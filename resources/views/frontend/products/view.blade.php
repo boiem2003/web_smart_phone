@@ -49,9 +49,12 @@
                             </div>
                         </div>
                         <div class="col-md-9">
-                            <br>
+                            <br/>
+                            @if ($products->qty > 0)
+                                <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                            @endif
                             <button type="button" class="btn btn-success me-3 float-start">Add to wishlist <i class="fa fa-heart"></i></button>
-                            <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                            
                         </div>
                     </div>
                 </div>
@@ -69,60 +72,3 @@
 
 @endsection
 
-@section('scripts')
-<script>
-    $(document).ready(function () {
-
-        $('.addToCartBtn').click(function (e){
-            e.preventDefault();
-
-            var product_id = $(this).closest('.product_data').find('.prod_id').val();
-            var product_qty = $(this).closest('.product_data').find('.qty-input').val();
-          
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-
-           $.ajax({
-            method: "POST",
-            url: "/add-to-cart",
-            data: {
-                    'product_id': product_id,
-                    'product_qty': product_qty,
-            },
-            success: function (response) {
-                swal(response.status);
- 
-            }
-           });
-        });
-
-        $('.increment-btn').click(function (e) {
-            e.preventDefault();
-
-            var inc_value = $('.qty-input').val();
-            var value = parseInt(inc_value, 10);
-            value = isNaN(value) ? 0 : value;
-            if(value < 10) {
-                value++;
-                $('.qty-input').val(value);
-            }
-        });
-
-        $('.decrement-btn').click(function (e) {
-            e.preventDefault();
-
-            var dec_value = $('.qty-input').val();
-            var value = parseInt(dec_value, 10);
-            value = isNaN(value) ? 0 : value;
-            if(value > 1) {
-                value--;
-                $('.qty-input').val(value);
-            }
-        });
-    });
-</script>
->>>>>>> 945acfba8e10f3615bcee744a61a1b6527fa6cd8
-@endsection
