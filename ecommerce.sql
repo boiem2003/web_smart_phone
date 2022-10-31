@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 31, 2022 lúc 08:15 AM
+-- Thời gian đã tạo: Th10 31, 2022 lúc 03:24 PM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 7.4.30
 
@@ -155,9 +155,9 @@ INSERT INTO `orders` (`id`, `user_id`, `fname`, `lname`, `email`, `phone`, `addr
 (9, '', 'Nguyễn', 'Thành', 'user@user.com', '0974623193', 'hẻm 43 hòa bình tân phú tp HCM', 'yuyuyu', 'Quận Tân Phú', 'Hồ Chí Minh', 'Việt Nam', '00909', '', 0, NULL, 'Nhóm 17 5110', '2022-10-30 08:50:02', '2022-10-30 08:50:02'),
 (10, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', 'asd', 'TP HCM', 'asd', 'VN', '7777', '', 0, NULL, 'Nhóm 17 7805', '2022-10-30 20:10:26', '2022-10-30 20:10:26'),
 (11, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123', 'TP HCM', 'HCM', 'Vn', '7777', '29990000', 0, NULL, 'Nhóm 17 9382', '2022-10-30 20:42:16', '2022-10-30 20:42:16'),
-(12, '3', 'Boi', 'Pham', 'userboi@gmail.com', '0123456789', '3/2', '2/3', 'HCM', 'HCM', 'VN', '123456', '29990000', 0, NULL, 'Nhóm 17 3427', '2022-10-30 22:06:37', '2022-10-30 22:06:37'),
-(13, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 0, NULL, 'Nhóm 17 5052', '2022-10-30 22:20:00', '2022-10-30 22:20:00'),
-(14, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 0, NULL, 'Nhóm 17 7803', '2022-10-30 22:42:18', '2022-10-30 22:42:18');
+(12, '3', 'Boi', 'Pham', 'userboi@gmail.com', '0123456789', '3/2', '2/3', 'HCM', 'HCM', 'VN', '123456', '29990000', 1, NULL, 'Nhóm 17 3427', '2022-10-30 22:06:37', '2022-10-31 05:36:51'),
+(13, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 1, NULL, 'Nhóm 17 5052', '2022-10-30 22:20:00', '2022-10-31 05:28:36'),
+(14, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 1, NULL, 'Nhóm 17 7803', '2022-10-30 22:42:18', '2022-10-31 05:36:45');
 
 -- --------------------------------------------------------
 
@@ -268,6 +268,14 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lname` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` int(191) DEFAULT NULL,
+  `address1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role_as` tinyint(4) NOT NULL DEFAULT 0,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -278,10 +286,12 @@ CREATE TABLE `users` (
 -- Đang đổ dữ liệu cho bảng `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Thành', 'user@user.com', NULL, '$2y$10$iJPzj3l9ticQpk7Tujx2n.dxH37zuujQg9ScawlfxmM5UU.TQxGMa', 0, NULL, '2022-10-30 00:36:51', '2022-10-30 00:36:51'),
-(2, 'Nhóm 17', 'admin@gmail.com', NULL, '$2y$10$BpBjeCpU8YqSboILsHAJaec2jyZOOtUoddEDgeWAinQgEzTQEGI5C', 1, NULL, '2022-10-30 00:38:51', '2022-10-30 00:38:51'),
-(3, 'userboi', 'userboi@gmail.com', NULL, '$2y$10$FfgVSHd2DvSdMVy9vgTvDOeaHOKdkvAOyp8KFXEpGOPp2DIzVFL/C', 0, NULL, '2022-10-30 09:46:13', '2022-10-30 09:46:13');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `lname`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Thành', 'user@user.com', NULL, '$2y$10$iJPzj3l9ticQpk7Tujx2n.dxH37zuujQg9ScawlfxmM5UU.TQxGMa', '', 0, '', '', '', '', '', '', 0, NULL, '2022-10-30 00:36:51', '2022-10-30 00:36:51'),
+(2, 'Nhóm 17', 'admin@gmail.com', NULL, '$2y$10$BpBjeCpU8YqSboILsHAJaec2jyZOOtUoddEDgeWAinQgEzTQEGI5C', '', 0, '', '', '', '', '', '', 1, NULL, '2022-10-30 00:38:51', '2022-10-30 00:38:51'),
+(3, 'userboi', 'userboi@gmail.com', NULL, '$2y$10$FfgVSHd2DvSdMVy9vgTvDOeaHOKdkvAOyp8KFXEpGOPp2DIzVFL/C', '', 0, '', '', '', '', '', '', 0, NULL, '2022-10-30 09:46:13', '2022-10-30 09:46:13'),
+(4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$ySoZqwhxMiTmP7Y9.kpK6uxejIuVp2rPQUCUviduHEluCzVlz0TRC', '', 0, '', '', '', '', '', '', 1, NULL, '2022-10-31 00:32:33', '2022-10-31 00:32:33'),
+(5, 'abc', 'abc@gmail.com', NULL, '$2y$10$HTctKGFJmuVuPY0CBj1euukBD00LrwxY3VxoSZLUhXxhKaHHR8FIe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2022-10-31 06:54:59', '2022-10-31 06:54:59');
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -407,7 +417,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
