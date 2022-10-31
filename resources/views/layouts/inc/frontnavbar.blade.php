@@ -41,6 +41,11 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
+                  <a class="dropdown-item" href="{{ url('my-orders') }}">
+                    My Orders
+                  </a>
+                </li>
+                <li>
                   <a class="dropdown-item" href="#">
                     My Profile
                   </a>
