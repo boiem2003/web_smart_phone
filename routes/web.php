@@ -4,6 +4,8 @@ use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
@@ -48,6 +50,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('view-order/{id}', [UserController::class, 'view']);
 });
 
+
+
 Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('/dashboard', 'Admin\FrontendController@index');
     // Category
@@ -65,4 +69,15 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('edit-product/{id}', [ProductController::class, 'edit']);
     Route::get('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
+    
+    //Orders
+    Route::get('orders', [OrderController::class, 'index']);
+    Route::get('admin/view-order/{id}', [OrderController::class, 'view']);
+    Route::put('update-order/{id}', [OrderController::class, 'updateorder']);
+    Route::get('order-history', [OrderController::class, 'orderhistory']);
+
+    //Users
+    Route::get('users', [DashboardController::class, 'users']);
+    Route::get('view-user/{id}', [DashboardController::class, 'viewuser']);
+
 });
