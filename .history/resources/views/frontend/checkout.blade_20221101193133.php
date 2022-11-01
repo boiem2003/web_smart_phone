@@ -95,7 +95,7 @@
                                 </tbody>
                             </table>
                             <hr>
-                            <button type="submit" class="btn btn-primary w-100">Place Order | COD</button>
+                            <button type="submit" class="btn btn-primary w-100">Place Order</button>
                         </div>
                     </div>
                 </div>

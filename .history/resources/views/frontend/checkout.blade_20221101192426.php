@@ -96,6 +96,7 @@
                             </table>
                             <hr>
                             <button type="submit" class="btn btn-primary w-100">Place Order | COD</button>
+                            <button class="btn">Pay with</button>
                         </div>
                     </div>
                 </div>
