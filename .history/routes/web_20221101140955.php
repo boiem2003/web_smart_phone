@@ -41,9 +41,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteproduct']);
 Route::post('update-cart', [CartController::class, 'updatecart']);
-Route::post('add-to-wishlist', [WishlistController::class, 'add']);
-Route::post('delete-wishlist-item',[WishlistController::class, 'deleteitem']);
-
 
 Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartController::class, 'viewcart']);
@@ -55,6 +52,7 @@ Route::middleware(['auth'])->group(function(){
 
     //Route wishlist
     Route::get('wishlist',[WishlistController::class, 'index']);
+    Route::get('add-to-wishlish', [WishlistController::class, 'add']);
 });
 
 

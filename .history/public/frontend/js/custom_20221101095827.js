@@ -4,7 +4,7 @@ $(document).ready(function () {
 
         var product_id = $(this).closest('.product_data').find('.prod_id').val();
         var product_qty = $(this).closest('.product_data').find('.qty-input').val();
-
+      
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -20,24 +20,9 @@ $(document).ready(function () {
         },
         success: function (response) {
             swal(response.status);
+
         }
        });
-    });
-
-    $('.addToWishlist').click(function (e) {
-        e.preventDefault();
-        var product_id = $(this).closest('.product_data').find('.prod_id').val();
-
-        $.ajax({
-        method: "POST",
-        url: "/add-to-wishlist",
-        data: {
-                'product_id': product_id,
-        },
-        success: function (response) {
-            swal(response.status);
-        }
-        });
     });
 
     $('.increment-btn').click(function (e) {
@@ -46,7 +31,7 @@ $(document).ready(function () {
         var inc_value = $(this).closest('.product_data').find('.qty-input').val();
         var value = parseInt(inc_value, 10);
         value = isNaN(value) ? 0 : value;
-        if(value < 10)
+        if(value < 10) 
         {
             ++value;
             $(this).closest('.product_data').find('.qty-input').val(value);
@@ -59,7 +44,7 @@ $(document).ready(function () {
         var dec_value = $(this).closest('.product_data').find('.qty-input').val();
         var value = parseInt(dec_value, 10);
         value = isNaN(value) ? 0 : value;
-        if(value > 1)
+        if(value > 1) 
         {
             value--;
             $(this).closest('.product_data').find('.qty-input').val(value);
@@ -90,24 +75,6 @@ $(document).ready(function () {
                     }
                 });
             });
-
-        $('.remove-wishlist-item').click(function (e) {
-            e.preventDefault();
-            var prod_id = $(this).closest('.product_data').find('.prod_id').val();
-            $.ajax(
-            {
-                method: "POST",
-                url: "delete-wishlist-item",
-                data: {
-                        'prod_id': prod_id,
-                },
-                    success: function(response) {
-                        window.location.reload();
-                        swal("", response.status, "success");
-                    }
-                });
-        });
-
         $('.changeQuantity').click(function (e){
             e.preventDefault();
 

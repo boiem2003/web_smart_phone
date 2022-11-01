@@ -42,7 +42,6 @@ Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteproduct']);
 Route::post('update-cart', [CartController::class, 'updatecart']);
 Route::post('add-to-wishlist', [WishlistController::class, 'add']);
-Route::post('delete-wishlist-item',[WishlistController::class, 'deleteitem']);
 
 
 Route::middleware(['auth'])->group(function(){

@@ -17,10 +17,10 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('wishlist') }}">Wishlist</a>
+          <a class="nav-link" href="{{ url('cart') }}">Cart</a>
         </li>
 
-
+        wishlist
 <!--
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>

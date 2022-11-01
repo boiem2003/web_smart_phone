@@ -97,7 +97,7 @@ $(document).ready(function () {
             $.ajax(
             {
                 method: "POST",
-                url: "delete-wishlist-item",
+                url: "delete-cart-item",
                 data: {
                         'prod_id': prod_id,
                 },

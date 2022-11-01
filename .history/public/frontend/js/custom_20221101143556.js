@@ -30,7 +30,7 @@ $(document).ready(function () {
 
         $.ajax({
         method: "POST",
-        url: "/add-to-wishlist",
+        url: "/add-to-wishlish",
         data: {
                 'product_id': product_id,
         },
@@ -90,24 +90,6 @@ $(document).ready(function () {
                     }
                 });
             });
-
-        $('.remove-wishlist-item').click(function (e) {
-            e.preventDefault();
-            var prod_id = $(this).closest('.product_data').find('.prod_id').val();
-            $.ajax(
-            {
-                method: "POST",
-                url: "delete-wishlist-item",
-                data: {
-                        'prod_id': prod_id,
-                },
-                    success: function(response) {
-                        window.location.reload();
-                        swal("", response.status, "success");
-                    }
-                });
-        });
-
         $('.changeQuantity').click(function (e){
             e.preventDefault();
 

@@ -13,7 +13,6 @@ use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\UserController;
-use App\Http\Controllers\Frontend\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,9 +40,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('add-to-cart', [CartController::class, 'addProduct']);
 Route::post('delete-cart-item', [CartController::class, 'deleteproduct']);
 Route::post('update-cart', [CartController::class, 'updatecart']);
-Route::post('add-to-wishlist', [WishlistController::class, 'add']);
-Route::post('delete-wishlist-item',[WishlistController::class, 'deleteitem']);
-
 
 Route::middleware(['auth'])->group(function(){
     Route::get('cart', [CartController::class, 'viewcart']);
@@ -54,7 +50,7 @@ Route::middleware(['auth'])->group(function(){
     Route::get('view-order/{id}', [UserController::class, 'view']);
 
     //Route wishlist
-    Route::get('wishlist',[WishlistController::class, 'index']);
+    Route::get('wishlist',[])
 });
 
 

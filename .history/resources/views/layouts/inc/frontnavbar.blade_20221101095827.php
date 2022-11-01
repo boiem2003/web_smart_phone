@@ -15,12 +15,6 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url('cart') }}">Cart</a>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url('wishlist') }}">Wishlist</a>
-        </li>
-
-
 <!--
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
@@ -28,7 +22,7 @@
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li>
--->
+--> 
         <!-- Authentication Links -->
           @guest
             @if(Route::has('login'))
@@ -67,9 +61,9 @@
                     @csrf
                   </form>
                 </li>
-
+                                    
               </ul>
-            </li>
+            </li>      
           @endguest
       </ul>
     </div>
