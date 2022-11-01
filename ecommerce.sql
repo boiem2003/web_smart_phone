@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 31, 2022 lúc 03:24 PM
--- Phiên bản máy phục vụ: 10.4.25-MariaDB
--- Phiên bản PHP: 7.4.30
+-- Host: 127.0.0.1
+-- Generation Time: Nov 01, 2022 at 01:36 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `ecommerce`
+-- Database: `ecommerce`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `carts`
+-- Table structure for table `carts`
 --
 
 CREATE TABLE `carts` (
@@ -37,18 +37,20 @@ CREATE TABLE `carts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `carts`
+-- Dumping data for table `carts`
 --
 
 INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `updated_at`) VALUES
 (1, '2', '1', '1', '2022-10-30 01:08:12', '2022-10-30 01:08:12'),
 (4, '1', '1', '7', '2022-10-30 08:15:49', '2022-10-30 08:45:20'),
-(7, '3', '1', '7', '2022-10-30 22:19:24', '2022-10-30 22:19:30');
+(7, '3', '1', '2', '2022-10-30 22:19:24', '2022-11-01 02:58:51'),
+(11, '3', '2', '4', '2022-11-01 04:29:10', '2022-11-01 04:29:10'),
+(13, '3', '3', '1', '2022-11-01 05:19:44', '2022-11-01 05:19:44');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -67,7 +69,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `popular`, `image`, `meta_title`, `meta_descrip`, `meta_keywords`, `created_at`, `updated_at`) VALUES
@@ -80,7 +82,7 @@ INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `popula
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `failed_jobs`
+-- Table structure for table `failed_jobs`
 --
 
 CREATE TABLE `failed_jobs` (
@@ -96,7 +98,7 @@ CREATE TABLE `failed_jobs` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE `migrations` (
@@ -106,7 +108,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -117,12 +119,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (30, '2022_10_16_072918_create_categories_table', 1),
 (31, '2022_10_17_074652_create_products_table', 1),
 (32, '2022_10_24_074822_create_carts_table', 1),
-(33, '2022_10_30_061513_create_orders_table', 1);
+(33, '2022_10_30_061513_create_orders_table', 1),
+(34, '2022_11_01_053414_create_wishlists_table', 2),
+(35, '2022_11_01_063232_create_orders_items', 3);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders`
+-- Table structure for table `orders`
 --
 
 CREATE TABLE `orders` (
@@ -147,7 +151,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `orders`
+-- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `fname`, `lname`, `email`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `total_price`, `status`, `message`, `tracking_no`, `created_at`, `updated_at`) VALUES
@@ -162,7 +166,7 @@ INSERT INTO `orders` (`id`, `user_id`, `fname`, `lname`, `email`, `phone`, `addr
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `orders_items`
+-- Table structure for table `orders_items`
 --
 
 CREATE TABLE `orders_items` (
@@ -176,7 +180,7 @@ CREATE TABLE `orders_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `orders_items`
+-- Dumping data for table `orders_items`
 --
 
 INSERT INTO `orders_items` (`id`, `order_id`, `prod_id`, `qty`, `price`, `created_at`, `updated_at`) VALUES
@@ -191,7 +195,7 @@ INSERT INTO `orders_items` (`id`, `order_id`, `prod_id`, `qty`, `price`, `create
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 CREATE TABLE `password_resets` (
@@ -203,7 +207,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `personal_access_tokens`
+-- Table structure for table `personal_access_tokens`
 --
 
 CREATE TABLE `personal_access_tokens` (
@@ -221,7 +225,7 @@ CREATE TABLE `personal_access_tokens` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
@@ -246,20 +250,20 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `tax`, `status`, `trending`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
 (1, 1, 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện. Ngoại hình không có nhiều đột phá nhưng bên trong là sức mạnh vô địch. Màn hình siêu lớn 6.7 inch hỗ trợ tần số quét 120Hz, chip Apple A15 Bionic hạ gục mọi đối thủ, vượt qua mọi thách thức.', '32990000', '29990000', '1667117230.jpg', 100, '20', 0, 1, 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', '2022-10-30 01:07:10', '2022-10-30 09:27:52'),
-(2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 1, 1, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-10-30 09:16:22'),
-(3, 2, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm, chú ý đến từ sự kiện Unpacked thường niên của Samsung nhờ sở hữu màn hình lớn cùng cơ chế gấp gọn giúp bạn có thể dễ dàng mang theo bên mình đi bất kỳ nơi đâu. Cùng với đó là sự nâng cấp về hiệu năng và phần mềm giúp thiết bị xử lý tốt hầu hết mọi tác vụ từ làm việc, học tập đến giải trí.', '44490000', '41490000', '1667146680.jpg', 100, '10', 1, 1, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', '2022-10-30 09:18:00', '2022-10-30 09:18:00'),
-(4, 4, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 150, '10', 1, 1, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-10-30 09:19:14'),
-(5, 5, 'Vivo V25 5G', 'Vivo V25 5G', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 1, 1, 'Vivo V25 5G', 'Vivo V25 5G', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20');
+(2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 0, 1, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-10-30 09:16:22'),
+(3, 2, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm, chú ý đến từ sự kiện Unpacked thường niên của Samsung nhờ sở hữu màn hình lớn cùng cơ chế gấp gọn giúp bạn có thể dễ dàng mang theo bên mình đi bất kỳ nơi đâu. Cùng với đó là sự nâng cấp về hiệu năng và phần mềm giúp thiết bị xử lý tốt hầu hết mọi tác vụ từ làm việc, học tập đến giải trí.', '44490000', '41490000', '1667146680.jpg', 100, '10', 0, 1, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', '2022-10-30 09:18:00', '2022-10-30 09:18:00'),
+(4, 4, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 150, '10', 0, 1, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-10-30 09:19:14'),
+(5, 5, 'Vivo V25 5G', 'Vivo V25 5G', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 0, 1, 'Vivo V25 5G', 'Vivo V25 5G', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -283,7 +287,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `lname`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
@@ -293,55 +297,77 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `ln
 (4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$ySoZqwhxMiTmP7Y9.kpK6uxejIuVp2rPQUCUviduHEluCzVlz0TRC', '', 0, '', '', '', '', '', '', 1, NULL, '2022-10-31 00:32:33', '2022-10-31 00:32:33'),
 (5, 'abc', 'abc@gmail.com', NULL, '$2y$10$HTctKGFJmuVuPY0CBj1euukBD00LrwxY3VxoSZLUhXxhKaHHR8FIe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2022-10-31 06:54:59', '2022-10-31 06:54:59');
 
+-- --------------------------------------------------------
+
 --
--- Chỉ mục cho các bảng đã đổ
+-- Table structure for table `wishlists`
+--
+
+CREATE TABLE `wishlists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `wishlists`
+--
+
+INSERT INTO `wishlists` (`id`, `user_id`, `prod_id`, `created_at`, `updated_at`) VALUES
+(6, '3', '3', '2022-11-01 05:19:50', '2022-11-01 05:19:50'),
+(7, '3', '3', '2022-11-01 05:19:54', '2022-11-01 05:19:54');
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `carts`
+-- Indexes for table `carts`
 --
 ALTER TABLE `carts`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `failed_jobs`
+-- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `failed_jobs_uuid_unique` (`uuid`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `orders`
+-- Indexes for table `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `orders_items`
+-- Indexes for table `orders_items`
 --
 ALTER TABLE `orders_items`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `password_resets`
+-- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
   ADD KEY `password_resets_email_index` (`email`);
 
 --
--- Chỉ mục cho bảng `personal_access_tokens`
+-- Indexes for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   ADD PRIMARY KEY (`id`),
@@ -349,75 +375,87 @@ ALTER TABLE `personal_access_tokens`
   ADD KEY `personal_access_tokens_tokenable_type_tokenable_id_index` (`tokenable_type`,`tokenable_id`);
 
 --
--- Chỉ mục cho bảng `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- Indexes for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `carts`
+-- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT cho bảng `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `failed_jobs`
+-- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
--- AUTO_INCREMENT cho bảng `orders`
+-- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT cho bảng `orders_items`
+-- AUTO_INCREMENT for table `orders_items`
 --
 ALTER TABLE `orders_items`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT cho bảng `personal_access_tokens`
+-- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
