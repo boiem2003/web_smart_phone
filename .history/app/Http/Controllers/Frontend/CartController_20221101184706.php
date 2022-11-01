@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
-    public function addProduct(Request $request){
+    public function addProduct(Request $request)
+    {
         $product_id =$request->input('product_id');
         $product_qty =$request->input('product_qty');
 
@@ -40,13 +41,15 @@ class CartController extends Controller
             return response()->json(['status' =>"Login to continue"]);
         }
     }
-    public function viewcart(){
+    public function viewcart()
+    {
         $cartitems = Cart::where('user_id', Auth::id())->get();
         return view('frontend.cart', compact('cartitems'));
     }
-    public function updatecart(Request $request){
-        $prod_id = $request->input('prod_id');
-        $product_qty = $request->input('prod_qty');
+    public function updatecart(Request $request)
+    {
+       $prod_id = $request->input('prod_id');
+       $product_qty = $request->input('prod_qty');
 
        if(Auth::check())
        {
@@ -61,7 +64,8 @@ class CartController extends Controller
        }
 
     }
-    public function deleteproduct(Request $request){
+    public function deleteproduct(Request $request)
+    {
         if(Auth::check())
         {
         $prod_id = $request->input('prod_id');
@@ -73,13 +77,15 @@ class CartController extends Controller
             return response()->json(['status'  => "Product deleted successfully"]);
         }
         }
-    else{
+    else
+    {
         return response()->json(['status' =>"Login to continue"]);
     }
     }
 
-    public function cartcount(){
-        $cartcount = Cart::where('user_id', Auth::id())->count();
+    public function cartcount()
+    {
+        $cartcount = Cart::where('user_id', Auth::id());
         return response()->json(['count' => $cartcount]);
     }
 

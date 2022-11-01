@@ -1,31 +1,13 @@
 $(document).ready(function () {
-    loadcart();
-    loadwishlist();
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    //loadcart
+
     function loadcart() {
         $.ajax({
             method: "GET",
             url: "/load-cart-data",
             success: function (response) {
                 $('.cart-count').html('');
-                $('.cart-count').html(response.count);
-            }
-        });
-    }
-
-    //loadWishlist
-    function loadwishlist() {
-        $.ajax({
-            method: "GET",
-            url: "/load-wishlist-count",
-            success: function (response) {
-                $('.wishlist-count').html('');
-                $('.wishlist-count').html(response.count);
+                $('.cart-count').val(response.count);
+                // console.log(response.count)
             }
         });
     }
@@ -51,7 +33,6 @@ $(document).ready(function () {
         },
         success: function (response) {
             swal(response.status);
-            loadcart();
         }
        });
     });
@@ -68,7 +49,6 @@ $(document).ready(function () {
         },
         success: function (response) {
             swal(response.status);
-            loadwishlist();
         }
         });
     });
@@ -98,6 +78,12 @@ $(document).ready(function () {
             $(this).closest('.product_data').find('.qty-input').val(value);
         }
     });
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
 
     $('.delete-cart-item').click(function (e) {
         e.preventDefault();
@@ -116,9 +102,9 @@ $(document).ready(function () {
                         swal("", response.status, "success");
                     }
                 });
-    });
+            });
 
-    $('.remove-wishlist-item').click(function (e) {
+        $('.remove-wishlist-item').click(function (e) {
             e.preventDefault();
             var prod_id = $(this).closest('.product_data').find('.prod_id').val();
             $.ajax(
@@ -133,9 +119,9 @@ $(document).ready(function () {
                         swal("", response.status, "success");
                     }
                 });
-    });
+        });
 
-    $('.changeQuantity').click(function (e){
+        $('.changeQuantity').click(function (e){
             e.preventDefault();
 
             var prod_id = $(this).closest('.product_data').find('.prod_id').val();
