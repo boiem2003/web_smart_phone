@@ -5,6 +5,22 @@
 @endsection
 
 @section('content')
+    <div class="py-3 mb-4 shadow-sm bg-warning border-top">
+        <div class="container">
+            <h6 class="mb-0">
+                <a href="{{url('/') }}">
+                    Home
+                </a> /
+                <a href="{{url('my-orders') }}">
+                    My Order
+                </a> /
+                <a href="#">
+                    Order Details
+                </a>
+            </h6>
+        </div>
+    </div>
+
     <div class="container py-5">
         <div class="row">
             <div class ="col-md-12">
@@ -71,4 +87,5 @@
             </div>
         </div>
     </div>
+
 @endsection

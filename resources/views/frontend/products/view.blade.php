@@ -7,7 +7,15 @@
 
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
     <div class="container">
-        <h6 class="mb-0">Collections / {{ $products->category->name }} / {{ $products->name }} </h6>
+        <h6 class="mb-0">
+            <a href="{{url('/') }}">
+                Home
+            </a> /
+            <a href="{{url('category') }}" >
+                Category
+            </a> /
+            <a> {{ $products->category->name }} / {{ $products->name }} </a>
+        </h6>
     </div>
 </div>
 
