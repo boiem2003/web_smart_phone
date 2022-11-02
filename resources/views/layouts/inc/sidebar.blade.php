@@ -17,32 +17,38 @@
           </li>
           <li class="nav-item {{ Request::is('categories') ? 'active':''}}">
             <a class="nav-link" href="{{ url('categories') }}">
-              <i class="material-icons">person</i>
+              <i class="material-icons">list</i>
               <p>Categories</p>
             </a>
           </li>
           <li class="nav-item {{ Request::is('add-category') ? 'active':''}} ">
             <a class="nav-link" href="{{ url('add-category') }}">
-              <i class="material-icons">person</i>
+              <i class="material-icons">add</i>
               <p>Add Category</p>
             </a>
           </li>
           <li class="nav-item {{ Request::is('products') ? 'active':''}}">
             <a class="nav-link" href="{{ url('products') }}">
-              <i class="material-icons">person</i>
+              <i class="material-icons">list</i>
               <p>Products</p>
             </a>
           </li>
           <li class="nav-item {{ Request::is('add-products') ? 'active':''}} ">
             <a class="nav-link" href="{{ url('add-products') }}">
-              <i class="material-icons">person</i>
+              <i class="material-icons">add</i>
               <p>Add Products</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+          <li class="nav-item {{ Request::is('orders') ? 'active':''}} ">
+            <a class="nav-link" href="{{ url('orders') }}">
+              <i class="material-icons">check</i>
+              <p>Orders</p>
+            </a>
+          </li>
+          <li class="nav-item {{ Request::is('users') ? 'active':''}} ">
+            <a class="nav-link" href="{{ url('users') }}">
+              <i class="material-icons">person</i>
+              <p>Users</p>
             </a>
           </li>
         </ul>

@@ -6,21 +6,33 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <li class="nav-item ">
+          <a class="nav-link" aria-current="page" href="{{ url('/') }}">Home</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="{{ url('category') }}">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('category') }}">Category</a>
+            <a class="nav-link" href="{{ url('cart') }}">Cart
+                <span class="badge badge-pill bg-primary cart-count">0</span>
+            </a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('cart') }}">Cart</a>
+            <a class="nav-link" href="{{ url('wishlist') }}">Wishlist
+                <span class="badge badge-pill bg-success wishlist-count">0</span>
+            </a>
         </li>
+
+
+<!--
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
-        </li> 
+        </li>
+-->
         <!-- Authentication Links -->
           @guest
             @if(Route::has('login'))
@@ -41,6 +53,11 @@
               </a>
               <ul class="dropdown-menu">
                 <li>
+                  <a class="dropdown-item" href="{{ url('my-orders') }}">
+                    My Orders
+                  </a>
+                </li>
+                <li>
                   <a class="dropdown-item" href="#">
                     My Profile
                   </a>
@@ -54,9 +71,9 @@
                     @csrf
                   </form>
                 </li>
-                                    
+
               </ul>
-            </li>      
+            </li>
           @endguest
       </ul>
     </div>

@@ -3,11 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
-<<<<<<< HEAD
--- Generation Time: Oct 27, 2022 at 10:00 AM
-=======
--- Generation Time: Oct 26, 2022 at 10:29 AM
->>>>>>> 945acfba8e10f3615bcee744a61a1b6527fa6cd8
+-- Generation Time: Nov 01, 2022 at 01:36 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -40,17 +36,17 @@ CREATE TABLE `carts` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-<<<<<<< HEAD
 --
 -- Dumping data for table `carts`
 --
 
 INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `updated_at`) VALUES
-(4, '4', '5', '9', '2022-10-26 23:49:45', '2022-10-27 00:59:02'),
-(5, '4', '6', '1', '2022-10-27 00:58:19', '2022-10-27 00:58:19');
+(1, '2', '1', '1', '2022-10-30 01:08:12', '2022-10-30 01:08:12'),
+(4, '1', '1', '7', '2022-10-30 08:15:49', '2022-10-30 08:45:20'),
+(7, '3', '1', '2', '2022-10-30 22:19:24', '2022-11-01 02:58:51'),
+(11, '3', '2', '4', '2022-11-01 04:29:10', '2022-11-01 04:29:10'),
+(13, '3', '3', '1', '2022-11-01 05:19:44', '2022-11-01 05:19:44');
 
-=======
->>>>>>> 945acfba8e10f3615bcee744a61a1b6527fa6cd8
 -- --------------------------------------------------------
 
 --
@@ -64,7 +60,7 @@ CREATE TABLE `categories` (
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(4) NOT NULL DEFAULT 0,
   `popular` tinyint(4) NOT NULL DEFAULT 0,
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_descrip` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_keywords` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -77,11 +73,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `popular`, `image`, `meta_title`, `meta_descrip`, `meta_keywords`, `created_at`, `updated_at`) VALUES
-(1, 'iphone', 'iphone', 'test', 0, 1, '1665978824.png', 'all kinds of iphone items', 'test', 'test123456789', '2022-10-16 02:05:11', '2022-10-23 22:32:59'),
-(2, 'iphone 14', 'iphone', 'test', 1, 1, '1665978802.png', 'all kinds of iphone items', 'iphone 123', 'iphone', '2022-10-16 05:10:25', '2022-10-20 01:54:12'),
-(3, 'iphone 14', 'iphone', 'test', 0, 0, '1665978790.png', 'all kinds of iphone items', 'test1111', 'test', '2022-10-16 05:11:07', '2022-10-16 20:53:10'),
-(4, 'iphone 14 pro max', 'iphone', 'test', 1, 0, '1665978759.png', 'all kinds of iphone items', 'test', 'test', '2022-10-16 05:28:02', '2022-10-23 22:40:50'),
-(8, 'Samsung Galaxy Z Flip3', 'samsung', 'test', 0, 1, '1665990803.png', 'test24', 'test24', 'test24', '2022-10-17 00:11:05', '2022-10-17 00:13:23');
+(1, 'Apple', 'Apple', 'Apple Inc. là một tập đoàn công nghệ đa quốc gia của Mỹ', 1, 1, '1667116405.png', 'Apple Inc', 'Apple Inc. là một tập đoàn công nghệ đa quốc gia của Mỹ có trụ sở chính tại Cupertino, California, chuyên thiết kế, phát triển và bán thiết bị điện tử', 'iPhone, iPhone 14 Pro, iPad,  iPad Air, iPad, Mac, MacBook Pro - MacBook Air - iMac 24 , Watch', '2022-10-30 00:53:25', '2022-10-30 00:53:25'),
+(2, 'Samsung', 'Samsung', 'Samsung là một công ty điện tử đa quốc gia của Hàn Quốc', 0, 1, '1667146143.png', 'Samsung', 'Samsung', 'Samsung', '2022-10-30 09:09:03', '2022-10-30 09:09:03'),
+(3, 'OPPO', 'OPPO', 'OPPO Electronics Corp là nhà sản xuất thiết bị điện tử, điện thoại di động Android Trung Quốc', 0, 1, '1667146179.png', 'OPPO', 'OPPO', 'OPPO', '2022-10-30 09:09:39', '2022-10-30 09:09:39'),
+(4, 'Xiaomi', 'Xiaomi', 'Xiaomi Mi 11 Xiaomi Inc. là một Tập đoàn sản xuất hàng điện tử Trung Quốc có trụ sở tại Thâm Quyến', 0, 1, '1667146253.png', 'Xiaomi Mi', 'Xiaomi Mi', 'Xiaomi Mi', '2022-10-30 09:10:53', '2022-10-30 09:10:53'),
+(5, 'Vivo', 'Vivo', 'Vivo là một công ty Trung Quốc chuyên thiết kế, phát triển và sản xuất điện thoại thông minh Android', 0, 1, '1667146310.png', 'Vivo', 'Vivo', 'Vivo', '2022-10-30 09:11:50', '2022-10-30 09:11:50');
 
 -- --------------------------------------------------------
 
@@ -116,13 +112,85 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2022_10_16_072918_create_categories_table', 2),
-(6, '2022_10_17_074652_create_products_table', 3),
-(7, '2022_10_24_074822_create_carts_table', 4);
+(26, '2014_10_12_000000_create_users_table', 1),
+(27, '2014_10_12_100000_create_password_resets_table', 1),
+(28, '2019_08_19_000000_create_failed_jobs_table', 1),
+(29, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(30, '2022_10_16_072918_create_categories_table', 1),
+(31, '2022_10_17_074652_create_products_table', 1),
+(32, '2022_10_24_074822_create_carts_table', 1),
+(33, '2022_10_30_061513_create_orders_table', 1),
+(34, '2022_11_01_053414_create_wishlists_table', 2),
+(35, '2022_11_01_063232_create_orders_items', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lname` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address1` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address2` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pincode` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total_price` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` tinyint(4) NOT NULL DEFAULT 0,
+  `message` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tracking_no` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `user_id`, `fname`, `lname`, `email`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `total_price`, `status`, `message`, `tracking_no`, `created_at`, `updated_at`) VALUES
+(8, '', 'Nguyễn', 'Thành', 'user@user.com', '0974623193', 'hẻm 43 hòa bình tân phú tp HCM', 'yuyuyu', 'Quận Tân Phú', 'Hồ Chí Minh', 'Việt Nam', '00909', '', 0, NULL, 'Nhóm 17 4591', '2022-10-30 08:46:23', '2022-10-30 08:46:23'),
+(9, '', 'Nguyễn', 'Thành', 'user@user.com', '0974623193', 'hẻm 43 hòa bình tân phú tp HCM', 'yuyuyu', 'Quận Tân Phú', 'Hồ Chí Minh', 'Việt Nam', '00909', '', 0, NULL, 'Nhóm 17 5110', '2022-10-30 08:50:02', '2022-10-30 08:50:02'),
+(10, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', 'asd', 'TP HCM', 'asd', 'VN', '7777', '', 0, NULL, 'Nhóm 17 7805', '2022-10-30 20:10:26', '2022-10-30 20:10:26'),
+(11, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123', 'TP HCM', 'HCM', 'Vn', '7777', '29990000', 0, NULL, 'Nhóm 17 9382', '2022-10-30 20:42:16', '2022-10-30 20:42:16'),
+(12, '3', 'Boi', 'Pham', 'userboi@gmail.com', '0123456789', '3/2', '2/3', 'HCM', 'HCM', 'VN', '123456', '29990000', 1, NULL, 'Nhóm 17 3427', '2022-10-30 22:06:37', '2022-10-31 05:36:51'),
+(13, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 1, NULL, 'Nhóm 17 5052', '2022-10-30 22:20:00', '2022-10-31 05:28:36'),
+(14, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 1, NULL, 'Nhóm 17 7803', '2022-10-30 22:42:18', '2022-10-31 05:36:45');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders_items`
+--
+
+CREATE TABLE `orders_items` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `order_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qty` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `orders_items`
+--
+
+INSERT INTO `orders_items` (`id`, `order_id`, `prod_id`, `qty`, `price`, `created_at`, `updated_at`) VALUES
+(3, '8', '1', '7', '19390000', '2022-10-30 08:46:23', '2022-10-30 08:46:23'),
+(4, '9', '1', '7', '19390000', '2022-10-30 08:50:02', '2022-10-30 08:50:02'),
+(5, '10', '1', '1', '29990000', '2022-10-30 20:10:26', '2022-10-30 20:10:26'),
+(6, '11', '1', '2', '29990000', '2022-10-30 20:42:16', '2022-10-30 20:42:16'),
+(7, '12', '1', '4', '29990000', '2022-10-30 22:06:37', '2022-10-30 22:06:37'),
+(8, '13', '1', '7', '29990000', '2022-10-30 22:20:00', '2022-10-30 22:20:00'),
+(9, '14', '1', '7', '29990000', '2022-10-30 22:42:18', '2022-10-30 22:42:18');
 
 -- --------------------------------------------------------
 
@@ -164,13 +232,13 @@ CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `cate_id` bigint(20) NOT NULL,
   `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `slug` varchar(191) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `small_description` mediumtext COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `slug` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `small_description` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `original_price` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `selling_price` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `qty` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `qty` int(50) NOT NULL,
   `tax` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `status` tinyint(4) NOT NULL,
   `trending` tinyint(4) NOT NULL,
@@ -186,10 +254,11 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `tax`, `status`, `trending`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
-(3, 8, 'oppo reno8', 'oppo', 'OPPO Reno8 có thiết kế nguyên khối, màn hình AMOLED 6.43 inch, độ phân giải Full HD+. Máy chạy trên hệ điều hành Android 12 và hoạt động tốt nhờ chipset MediaTek Dimensity 1300 8 nhân. Camera chính 50MP, dung lượng pin 4500mAh và hỗ trợ sạc nhanh lên đến 80W', 'OPPO Reno8 - chuyên gia chụp ảnh chân dung hàng đầu nhờ sự kết hợp giữa cảm biến cao cấp Sony IMX709(camera trước) và IMX766(camera sau) với ống kính Micro30x. Ngoài ra, phiên bản Reno 8 mang lại cho người dùng khả năng cân bằng cuộc sống theo khung giờ 8 tiếng giúp làm việc hiệu quả và nghỉ ngơi đầy đủ. Hiệu năng mà OPPO Reno 8 sở hữu 8GB RAM, 256GB bộ nhớ trong đi cùng với vi xử lý MediaTek Dimensity 1300 giúp tối ưu các tác vụ hiệu quả cùng hiệu năng chơi game đỉnh cao.', '8990000', '8690000', '1666168996.png', '100', '100', 0, 0, 'OPPO Reno8', 'OPPO Reno8, oppo new', 'Chuyên gia chân dung, bừng sáng khoảnh khắc đêm - Cụm camera 64MP + 2MP + 2MP hiện đại\r\nDẫn đầu xu hướng nhờ thiết kế tinh xảo, cao cấp và mỏng nhẹ, phù hợp với trải nghiệm hàng ngày\r\nSạc nhanh siêu tốc, tràn đầy năng lượng cho cả ngày - Viên pin 4500mAh, Sạc nhanh siêu tốc 33W\r\nGấp đôi hiệu suất, xử lí mọi tác vụ - Con chip Qualcomm Snapdragon 680 mạnh mẽ trong phân khúc', '2022-10-19 01:43:16', '2022-10-19 01:43:16'),
-(5, 1, 'iphonedfgd', 'sdfsda', NULL, 'dfg', '5654', '5436', '1666253443.jfif', '150', '456', 0, 1, 'drfg', 'dfg', 'dfg', '2022-10-20 01:10:43', '2022-10-26 01:19:56'),
-(6, 1, 'dfgd', 'dfg', NULL, 'dfg', '5453', '453', '1666253508.jfif', '10', '45', 0, 1, 'sdfsd', 'dfg', 'jrt', '2022-10-20 01:11:48', '2022-10-26 01:15:12'),
-(7, 1, 'iphone 7', 'iphone', 'iPhone 13 Pro Max 512G - smartphone sở hữu hệ thống camera chuyên nghiệp tiên tiến nhất trên iPhone. Màn hình  Super Retina XDR với ProMotion tiết kiệm pin tối đa cùng chip A15 Bionic mạnh nhất từ trước tới giờ mang tới sự hài lòng trên mọi phương diện. Dung lượng khủng 512GB giúp bạn tha hồ sử dụng và lưu trữ. ', 'sdfsdf', '424', '42', '1666277114.jfif', '100', '4524', 1, 1, 'sdfsd', 'sdfs', 'sdf', '2022-10-20 07:45:14', '2022-10-20 07:45:14');
+(1, 1, 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện. Ngoại hình không có nhiều đột phá nhưng bên trong là sức mạnh vô địch. Màn hình siêu lớn 6.7 inch hỗ trợ tần số quét 120Hz, chip Apple A15 Bionic hạ gục mọi đối thủ, vượt qua mọi thách thức.', '32990000', '29990000', '1667117230.jpg', 100, '20', 0, 1, 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', '2022-10-30 01:07:10', '2022-10-30 09:27:52'),
+(2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 0, 1, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-10-30 09:16:22'),
+(3, 2, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm, chú ý đến từ sự kiện Unpacked thường niên của Samsung nhờ sở hữu màn hình lớn cùng cơ chế gấp gọn giúp bạn có thể dễ dàng mang theo bên mình đi bất kỳ nơi đâu. Cùng với đó là sự nâng cấp về hiệu năng và phần mềm giúp thiết bị xử lý tốt hầu hết mọi tác vụ từ làm việc, học tập đến giải trí.', '44490000', '41490000', '1667146680.jpg', 100, '10', 0, 1, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', '2022-10-30 09:18:00', '2022-10-30 09:18:00'),
+(4, 4, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 150, '10', 0, 1, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-10-30 09:19:14'),
+(5, 5, 'Vivo V25 5G', 'Vivo V25 5G', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 0, 1, 'Vivo V25 5G', 'Vivo V25 5G', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20');
 
 -- --------------------------------------------------------
 
@@ -203,6 +272,14 @@ CREATE TABLE `users` (
   `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `lname` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` int(191) DEFAULT NULL,
+  `address1` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address2` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `country` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pincode` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `role_as` tinyint(4) NOT NULL DEFAULT 0,
   `remember_token` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -213,11 +290,34 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'NCThanh', 'user@user.com', NULL, '$2y$10$w0axIBdFlhxeRJdn1BZ2vezxEyDailHwTe8HTNs8NYnIXYyJKw78e', 1, NULL, '2022-10-15 05:17:20', '2022-10-15 05:17:20'),
-(2, 'dangkhoa', 'nguyendkhoa147@gmail.com', NULL, '$2y$10$S879/v2GI7TbZcDqvaapJeXs7AwWzqpO3o9F42zHYZegYoKOY4wu.', 1, NULL, '2022-10-16 04:11:17', '2022-10-16 04:11:17'),
-(3, 'thao', 'Thao@gmail.com', NULL, '$2y$10$toh1ybs/X4TyNiYiWfgPxOLfmerJGTEGtnDPIRX.8sLJcnWr.b7VG', 1, NULL, '2022-10-16 23:18:00', '2022-10-16 23:18:00'),
-(4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$mXStWWe8XkQuO5naUTjIouuM8/tNo885foRUuMesQDW1nXzwk1Pj6', 0, NULL, '2022-10-17 22:36:21', '2022-10-17 22:36:21');
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `lname`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Thành', 'user@user.com', NULL, '$2y$10$iJPzj3l9ticQpk7Tujx2n.dxH37zuujQg9ScawlfxmM5UU.TQxGMa', '', 0, '', '', '', '', '', '', 0, NULL, '2022-10-30 00:36:51', '2022-10-30 00:36:51'),
+(2, 'Nhóm 17', 'admin@gmail.com', NULL, '$2y$10$BpBjeCpU8YqSboILsHAJaec2jyZOOtUoddEDgeWAinQgEzTQEGI5C', '', 0, '', '', '', '', '', '', 1, NULL, '2022-10-30 00:38:51', '2022-10-30 00:38:51'),
+(3, 'userboi', 'userboi@gmail.com', NULL, '$2y$10$FfgVSHd2DvSdMVy9vgTvDOeaHOKdkvAOyp8KFXEpGOPp2DIzVFL/C', '', 0, '', '', '', '', '', '', 0, NULL, '2022-10-30 09:46:13', '2022-10-30 09:46:13'),
+(4, 'adminboi', 'adminboi@gmail.com', NULL, '$2y$10$ySoZqwhxMiTmP7Y9.kpK6uxejIuVp2rPQUCUviduHEluCzVlz0TRC', '', 0, '', '', '', '', '', '', 1, NULL, '2022-10-31 00:32:33', '2022-10-31 00:32:33'),
+(5, 'abc', 'abc@gmail.com', NULL, '$2y$10$HTctKGFJmuVuPY0CBj1euukBD00LrwxY3VxoSZLUhXxhKaHHR8FIe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2022-10-31 06:54:59', '2022-10-31 06:54:59');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `wishlists`
+--
+
+CREATE TABLE `wishlists` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `wishlists`
+--
+
+INSERT INTO `wishlists` (`id`, `user_id`, `prod_id`, `created_at`, `updated_at`) VALUES
+(6, '3', '3', '2022-11-01 05:19:50', '2022-11-01 05:19:50'),
+(7, '3', '3', '2022-11-01 05:19:54', '2022-11-01 05:19:54');
 
 --
 -- Indexes for dumped tables
@@ -249,6 +349,18 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders_items`
+--
+ALTER TABLE `orders_items`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `password_resets`
 --
 ALTER TABLE `password_resets`
@@ -276,6 +388,12 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `users_email_unique` (`email`);
 
 --
+-- Indexes for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -283,17 +401,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-<<<<<<< HEAD
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-=======
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
->>>>>>> 945acfba8e10f3615bcee744a61a1b6527fa6cd8
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -305,7 +419,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `orders_items`
+--
+ALTER TABLE `orders_items`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -317,13 +443,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `wishlists`
+--
+ALTER TABLE `wishlists`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

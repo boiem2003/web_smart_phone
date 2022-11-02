@@ -7,7 +7,15 @@
 
 <div class="py-3 mb-4 shadow-sm bg-warning border-top">
     <div class="container">
-        <h6 class="mb-0">Collections / {{ $products->category->name }} / {{ $products->name }} </h6>
+        <h6 class="mb-0">
+            <a href="{{url('/') }}">
+                Home
+            </a> /
+            <a href="{{url('category') }}" >
+                Category
+            </a> /
+            <a> {{ $products->category->name }} / {{ $products->name }} </a>
+        </h6>
     </div>
 </div>
 
@@ -49,9 +57,12 @@
                             </div>
                         </div>
                         <div class="col-md-9">
-                            <br>
-                            <button type="button" class="btn btn-success me-3 float-start">Add to wishlist <i class="fa fa-heart"></i></button>
-                            <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                            <br/>
+                            @if ($products->qty > 0)
+                                <button type="button" class="btn btn-primary me-3 addToCartBtn float-start">Add to cart <i class="fa fa-shopping-cart"></i></button>
+                            @endif
+                            <button type="button" class="btn btn-success me-3 addToWishlist float-start">Add to wishlist <i class="fa fa-heart"></i></button>
+
                         </div>
                     </div>
                 </div>
@@ -68,3 +79,4 @@
 </div>
 
 @endsection
+

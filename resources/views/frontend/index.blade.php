@@ -7,7 +7,7 @@
 @section('content')
     @include('layouts.inc.slider')
     
-    <div class="py-5">>
+    <div class="py-5">
         <div class="container">
             <div class="row">
                 <h2>Featured Products</h2>
@@ -29,7 +29,7 @@
         </div>
     </div>
 
-    <div class="py-5">>
+    <div class="py-5">
         <div class="container">
             <div class="row">
                 <h2>Trending category</h2>
