@@ -50,6 +50,7 @@ $(document).ready(function () {
             $(this).closest('.product_data').find('.qty-input').val(value);
         }
     });
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
