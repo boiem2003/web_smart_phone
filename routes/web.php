@@ -69,7 +69,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('add-category', 'Admin\CategoryController@add');
     Route::put('insert-category', 'Admin\CategoryController@insert');
     Route::get('edit-category/{id}', [CategoryController::class , 'edit']);
-    Route::get('update-category/{id}', [CategoryController::class, 'update']);
+    Route::put('update-category/{id}', [CategoryController::class, 'update']);
     Route::get('delete-category/{id}', [CategoryController::class , 'destroy']);
 
     // Products
@@ -77,7 +77,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('add-products', [ProductController::class, 'add']);
     Route::put('insert-product', [ProductController::class, 'insert']);
     Route::get('edit-product/{id}', [ProductController::class, 'edit']);
-    Route::get('update-product/{id}', [ProductController::class, 'update']);
+    Route::put('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
 
     //Orders
