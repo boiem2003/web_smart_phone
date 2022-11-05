@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 01, 2022 at 01:36 PM
+-- Generation Time: Nov 04, 2022 at 03:01 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -45,7 +45,9 @@ INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `upda
 (4, '1', '1', '7', '2022-10-30 08:15:49', '2022-10-30 08:45:20'),
 (7, '3', '1', '2', '2022-10-30 22:19:24', '2022-11-01 02:58:51'),
 (11, '3', '2', '4', '2022-11-01 04:29:10', '2022-11-01 04:29:10'),
-(13, '3', '3', '1', '2022-11-01 05:19:44', '2022-11-01 05:19:44');
+(13, '3', '3', '1', '2022-11-01 05:19:44', '2022-11-01 05:19:44'),
+(14, '4', '1', '1', '2022-11-04 04:45:44', '2022-11-04 04:45:44'),
+(15, '4', '3', '1', '2022-11-04 05:54:34', '2022-11-04 05:54:34');
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (32, '2022_10_24_074822_create_carts_table', 1),
 (33, '2022_10_30_061513_create_orders_table', 1),
 (34, '2022_11_01_053414_create_wishlists_table', 2),
-(35, '2022_11_01_063232_create_orders_items', 3);
+(35, '2022_11_01_063232_create_orders_items', 3),
+(36, '2022_11_04_013725_create_ratings_table', 4);
 
 -- --------------------------------------------------------
 
@@ -155,13 +158,7 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `user_id`, `fname`, `lname`, `email`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `total_price`, `status`, `message`, `tracking_no`, `created_at`, `updated_at`) VALUES
-(8, '', 'Nguyễn', 'Thành', 'user@user.com', '0974623193', 'hẻm 43 hòa bình tân phú tp HCM', 'yuyuyu', 'Quận Tân Phú', 'Hồ Chí Minh', 'Việt Nam', '00909', '', 0, NULL, 'Nhóm 17 4591', '2022-10-30 08:46:23', '2022-10-30 08:46:23'),
-(9, '', 'Nguyễn', 'Thành', 'user@user.com', '0974623193', 'hẻm 43 hòa bình tân phú tp HCM', 'yuyuyu', 'Quận Tân Phú', 'Hồ Chí Minh', 'Việt Nam', '00909', '', 0, NULL, 'Nhóm 17 5110', '2022-10-30 08:50:02', '2022-10-30 08:50:02'),
-(10, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', 'asd', 'TP HCM', 'asd', 'VN', '7777', '', 0, NULL, 'Nhóm 17 7805', '2022-10-30 20:10:26', '2022-10-30 20:10:26'),
-(11, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123', 'TP HCM', 'HCM', 'Vn', '7777', '29990000', 0, NULL, 'Nhóm 17 9382', '2022-10-30 20:42:16', '2022-10-30 20:42:16'),
-(12, '3', 'Boi', 'Pham', 'userboi@gmail.com', '0123456789', '3/2', '2/3', 'HCM', 'HCM', 'VN', '123456', '29990000', 1, NULL, 'Nhóm 17 3427', '2022-10-30 22:06:37', '2022-10-31 05:36:51'),
-(13, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 1, NULL, 'Nhóm 17 5052', '2022-10-30 22:20:00', '2022-10-31 05:28:36'),
-(14, '3', 'Phạm', 'Bội', 'phamngocboi109@gmail.com', '0795889435', '606/154 đường 3/2 phường 14 quận 10', '123123', 'TP HCM', '123123', '123123', '123123', '209930000', 1, NULL, 'Nhóm 17 7803', '2022-10-30 22:42:18', '2022-10-31 05:36:45');
+(1, '4', 'Thanh', 'Thu', 'adminboi@gmail.com', '0973674869', '34 Nghúds', '56 Au co', 'HCM', 'dhfhf', 'Việt Nam', '777777', '71480000', 0, NULL, 'Nhóm 17 3759', '2022-11-04 06:53:33', '2022-11-04 06:53:33');
 
 -- --------------------------------------------------------
 
@@ -184,13 +181,8 @@ CREATE TABLE `orders_items` (
 --
 
 INSERT INTO `orders_items` (`id`, `order_id`, `prod_id`, `qty`, `price`, `created_at`, `updated_at`) VALUES
-(3, '8', '1', '7', '19390000', '2022-10-30 08:46:23', '2022-10-30 08:46:23'),
-(4, '9', '1', '7', '19390000', '2022-10-30 08:50:02', '2022-10-30 08:50:02'),
-(5, '10', '1', '1', '29990000', '2022-10-30 20:10:26', '2022-10-30 20:10:26'),
-(6, '11', '1', '2', '29990000', '2022-10-30 20:42:16', '2022-10-30 20:42:16'),
-(7, '12', '1', '4', '29990000', '2022-10-30 22:06:37', '2022-10-30 22:06:37'),
-(8, '13', '1', '7', '29990000', '2022-10-30 22:20:00', '2022-10-30 22:20:00'),
-(9, '14', '1', '7', '29990000', '2022-10-30 22:42:18', '2022-10-30 22:42:18');
+(1, '1', '1', '1', '29990000', '2022-11-04 06:53:33', '2022-11-04 06:53:33'),
+(2, '1', '3', '1', '41490000', '2022-11-04 06:53:33', '2022-11-04 06:53:33');
 
 -- --------------------------------------------------------
 
@@ -257,8 +249,30 @@ INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `d
 (1, 1, 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện. Ngoại hình không có nhiều đột phá nhưng bên trong là sức mạnh vô địch. Màn hình siêu lớn 6.7 inch hỗ trợ tần số quét 120Hz, chip Apple A15 Bionic hạ gục mọi đối thủ, vượt qua mọi thách thức.', '32990000', '29990000', '1667117230.jpg', 100, '20', 0, 1, 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', 'iPhone 13 Pro Max 256GB', '2022-10-30 01:07:10', '2022-10-30 09:27:52'),
 (2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 0, 1, 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-10-30 09:16:22'),
 (3, 2, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm, chú ý đến từ sự kiện Unpacked thường niên của Samsung nhờ sở hữu màn hình lớn cùng cơ chế gấp gọn giúp bạn có thể dễ dàng mang theo bên mình đi bất kỳ nơi đâu. Cùng với đó là sự nâng cấp về hiệu năng và phần mềm giúp thiết bị xử lý tốt hầu hết mọi tác vụ từ làm việc, học tập đến giải trí.', '44490000', '41490000', '1667146680.jpg', 100, '10', 0, 1, 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', 'Samsung Galaxy Z Fold4 5G 512GB', '2022-10-30 09:18:00', '2022-10-30 09:18:00'),
-(4, 4, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 150, '10', 0, 1, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-10-30 09:19:14'),
+(4, 4, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12-256GB', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 150, '10', 0, 1, 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-10-30 09:19:14'),
 (5, 5, 'Vivo V25 5G', 'Vivo V25 5G', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 0, 1, 'Vivo V25 5G', 'Vivo V25 5G', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ratings`
+--
+
+CREATE TABLE `ratings` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `prod_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `stars_rated` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ratings`
+--
+
+INSERT INTO `ratings` (`id`, `user_id`, `prod_id`, `stars_rated`, `created_at`, `updated_at`) VALUES
+(1, '4', '1', '4', '2022-11-04 06:54:33', '2022-11-04 06:54:33');
 
 -- --------------------------------------------------------
 
@@ -381,6 +395,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `ratings`
+--
+ALTER TABLE `ratings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -401,7 +421,7 @@ ALTER TABLE `wishlists`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -419,19 +439,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `orders_items`
 --
 ALTER TABLE `orders_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -444,6 +464,12 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `products`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `ratings`
+--
+ALTER TABLE `ratings`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
