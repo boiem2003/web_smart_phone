@@ -55,7 +55,7 @@ class CheckoutController extends Controller
         //$order->tracking_no = 'Nhom17'.rand(123,456);
         $order->save() ;
 
-        $cartitems= cart::where('user_id',Auth::id())->get();
+        $cartitems= Cart::where('user_id',Auth::id())->get();
         foreach($cartitems as $item){
             OrderItem::create([
                 'order_id'=> $order->id,
@@ -63,21 +63,30 @@ class CheckoutController extends Controller
                 'qty'=> $item->prod_qty,
                 'price'=> $item->products->selling_price,
             ]);
-        }
-        return redirect('/')->with('status', "Order placed Successfully");
 
-        // if(Auth::user()->address1== NULL){
-        //     $user= User::where('id', Auth::id())->first();
-        //     $user->name= $request->input('fname');
-        //     $user->lname= $request->input('lname');
-        //     $user->phone= $request->input('phone');
-        //     $user->address1= $request->input('address1');
-        //     $user->address2= $request->input('address2');
-        //     $user->city= $request->input('city');
-        //     $user->state= $request->input('state');
-        //     $user->country= $request->input('country');
-        //     $user->pincode= $request->input('pincode');
-        //     $user->update();
-        // }   
+            $prod = Product::where('id', $item->prod_id)->first();
+            $prod->qty = $prod->qty - $item->prod_qty;
+            $prod->update();
+        }
+
+        if(Auth::user()->address1== NULL)
+        {
+            $user= User::where('id', Auth::id())->first();
+             $user->name= $request->input('fname');
+             $user->lname= $request->input('lname');
+             $user->phone= $request->input('phone');
+             $user->address1= $request->input('address1');
+             $user->address2= $request->input('address2');
+             $user->city= $request->input('city');
+             $user->state= $request->input('state');
+             $user->country= $request->input('country');
+             $user->pincode= $request->input('pincode');
+             $user->update();
+        }  
+        
+        $cartitems= Cart::where('user_id',Auth::id())->get();
+        Cart::destroy($cartitems);
+
+        return redirect('/')->with('status', "Order placed Successfully");
     }
 }
