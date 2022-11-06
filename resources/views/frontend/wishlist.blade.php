@@ -19,7 +19,7 @@
 </div>
 
 <div class="container my-5">
-    <div class="card shadow">
+    <div class="card shadow wishlistitems">
         <div class="card-body">
             @if ($wishlist-> count() > 0)
                 @foreach ($wishlist as $item)
@@ -57,7 +57,9 @@
                 @endforeach
             </div>
             @else
-                <h4>There are no products in your Wishlist</h4>
+                <div class="card-body text-center">
+                    <h2><i class="fa fa-heart-o"></i> There are no products in your Wishlist</h2>
+                </div>
             @endif
         </div>
     </div>

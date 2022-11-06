@@ -19,7 +19,7 @@
 </div>
 
 <div class="container my-5">
-    <div class="card shadow">
+    <div class="card shadow cartitems">
         @if($cartitems->count() >0)
             <div class="card-body">
                 @php $total = 0; @endphp
@@ -61,7 +61,7 @@
             </div>
         @else
             <div class="card-body text-center">
-                <h2>Your <i class="fa fa-shopping-cart"></i> Cart is empty</h2>
+                <h2><i class="fa fa-shopping-cart"></i> Your Cart is empty</h2>
                 <a href="{{ url('category') }}" class="btn btn-outline-primary float-end">Continue Shopping</a>
             </div>
         @endif
