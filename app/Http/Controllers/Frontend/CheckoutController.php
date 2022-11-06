@@ -64,6 +64,7 @@ class CheckoutController extends Controller
                 'price'=> $item->products->selling_price,
             ]);
         }
+        return redirect('/')->with('status', "Order placed Successfully");
 
         // if(Auth::user()->address1== NULL){
         //     $user= User::where('id', Auth::id())->first();

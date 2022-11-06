@@ -54,12 +54,17 @@ Route::middleware(['auth'])->group(function(){
     Route::get('checkout', [CheckoutController::class, 'index']);
     Route::post('place-order', [CheckoutController::class, 'placeorder']);
 
+    //Route order
     Route::get('my-orders', [UserController::class, 'index']);
     Route::get('view-order/{id}', [UserController::class, 'view']);
     Route::get('add-rating', [RatingController::class, 'add']);
+
     //Route review
     Route::get('add-review/{product_slug}/userreview', [ReviewController::class, 'add']);
     Route::post('add-review', [ReviewController::class, 'create']);
+    Route::get('edit-review/{product_slug}/userreview', [ReviewController::class, 'edit']);
+    Route::put('update-review', [ReviewController::class, 'update']);
+
     //Route wishlist
     Route::get('wishlist',[WishlistController::class, 'index']);
 });
