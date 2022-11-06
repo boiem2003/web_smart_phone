@@ -59,3 +59,9 @@
 .checked{
   color:#ffd900;
 }
+
+.whatapp-chat{
+  bottom: 10px;
+  left: 10px;
+  position: fixed;
+}
