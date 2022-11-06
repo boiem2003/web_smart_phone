@@ -26,6 +26,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
     {{-- Font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -42,10 +44,29 @@
     <div class="content">
         @yield('content')
     </div>
-    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js')}}" ></script>
     <script src="{{ asset('frontend/js/jquery-3.6.1.min.js')}}" ></script>
+    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js')}}" ></script>
     <script src="{{ asset('frontend/js/owl.carousel.min.js')}}" ></script>
     <script src="{{ asset('frontend/js/custom.js')}}" ></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+        var availableTags = [];
+        $.ajax({
+            method: "GET",
+            url: "/product-list",
+            success: function (response){
+                console.log(response);
+                startAutoComplete(response);
+            }
+        });
+
+        function startAutoComplete(availableTags)
+        {
+            $( "#search_product" ).autocomplete({
+                source: availableTags
+            });
+        }
+    </script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     @if(session('status'))
