@@ -11,6 +11,11 @@
         <div class="container">
             <div class="row">
                 <h2>Featured Products</h2>
+                <h6>
+                    <a href="{{ url('/product') }}" class="float-end">
+                        All Product
+                    </a>
+                </h6>
                 <div class="owl-carousel featured-carousel owl-theme">
                     @foreach ($featured_products as $prod)
                         <div class="item">
@@ -19,8 +24,8 @@
                                     <img src="{{ asset('assets/uploads/products/'.$prod->image)}}"  alt="Product image">
                                     <div class="card-body">
                                         <h5>{{$prod->name}}</h5>
-                                        <Small class="float-start">{{$prod->selling_price}}</small>
-                                        <Small class="float-end"><s>{{$prod->original_price}}</s></small>
+                                        <small class="float-start"><s>{{$prod->original_price}}</s></small>
+                                        <h4 class="float-end">{{$prod->selling_price}}</h4>
                                     </div>
                                 </div>
                             </a>
@@ -36,15 +41,15 @@
             <div class="row">
                 <h2>Trending category</h2>
                 <h6>
-                        <a href="{{ url('/category') }}" class="float-end">
-                            All Category
-                        </a>
-                    </h6>
-                <div class="owl-carousel trending-carousel owl-theme">
+                    <a href="{{ url('/category') }}" class="float-end">
+                        All Category
+                    </a>
+                </h6>
+                <div class="owl-carousel trending-carousel owl-theme" hight="20px">
                     @foreach ($trending_category as $trencate)
                         <div class="item">
                             <a href="{{ url('view-category/'.$trencate->slug)}}">
-                                <div class="card ">
+                                <div class="card">
                                     <img src="{{ asset('assets/uploads/category/'.$trencate->image)}}"  alt="Category image">
                                     <div class="card-body">
                                         <h5>{{$trencate->name}}</h5>

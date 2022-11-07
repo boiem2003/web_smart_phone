@@ -11,7 +11,7 @@
             <a href="{{url('/') }}">
                 Home
             </a> /
-            <a href="{{url('wishlist') }}">
+            <a>
                 Wishlist
             </a>
           </h6>

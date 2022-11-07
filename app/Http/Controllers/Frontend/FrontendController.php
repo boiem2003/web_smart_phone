@@ -24,6 +24,12 @@ class FrontendController extends Controller
         return view('frontend.category', compact('category'));
     }
 
+    public function product()
+    {
+        $product= Product::all();
+        return view('frontend.product', compact('product'));
+    }
+
     public function viewcategory($slug){
         if(Category::where ('slug', $slug) ->exists()){
             $category= Category::where('slug', $slug) ->first();

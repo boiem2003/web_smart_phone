@@ -11,9 +11,10 @@
             <a href="{{url('/') }}">
                 Home
             </a> /
-            <a href="{{url('category') }}">
+            <a href="{{url('category') }}" >
                 Category
-            </a>
+            </a> /
+            <a> {{ $category->name }}</a>
           </h6>
     </div>
 </div>

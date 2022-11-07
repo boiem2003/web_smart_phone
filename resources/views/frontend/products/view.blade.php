@@ -2,8 +2,24 @@
 
 @section('title',$products->name)
 
-
 @section('content')
+<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+    <div class="container">
+        <h6 class="mb-0">
+            <a href="{{url('/') }}">
+                Home
+            </a> /
+            <a href="{{url('category') }}" >
+                Category
+            </a> /
+            <a href="{{url('view-category/'.$products->category->name) }}" >
+                {{ $products->category->name }}
+            </a> /
+            <a>{{ $products->name }} </a>
+        </h6>
+    </div>
+</div>
+
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -47,20 +63,6 @@
                 </div>
             </form>
         </div>
-    </div>
-</div>
-
-<div class="py-3 mb-4 shadow-sm bg-warning border-top">
-    <div class="container">
-        <h6 class="mb-0">
-            <a href="{{url('/') }}">
-                Home
-            </a> /
-            <a href="{{url('category') }}" >
-                Category
-            </a> /
-            <a> {{ $products->category->name }} / {{ $products->name }} </a>
-        </h6>
     </div>
 </div>
 

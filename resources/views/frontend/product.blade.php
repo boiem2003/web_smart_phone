@@ -1,7 +1,7 @@
 @extends('layouts.front')
 
 @section('title')
-    Category
+    Product
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
                 Home
             </a> /
             <a>
-                Category
+                Product
             </a>
         </h6>
     </div>
@@ -21,18 +21,17 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>All Categories</h2>
+                    <h2>All Products</h2>
                     <div class="row">
-                        @foreach ($category as $cate)
+                        @foreach ($product as $prod)
                             <div class="col-md-3 md-3">
-                                <a href="{{ url('view-category/'.$cate->slug)}}">
-                                    <div class="card">
-                                        <img src="{{ asset('assets/uploads/category/'.$cate->image)}}"  alt="Category image">
+                                <a href="{{ url('view-category/'.$prod->category->name.'/'.$prod->slug)}}">
+                                    <div class="card mt-3">
+                                        <img src="{{ asset('assets/uploads/products/'.$prod->image)}}"  alt="Product image">
                                         <div class="card-body">
-                                            <h5>{{$cate->name}}</h5>
-                                            <p>
-                                                {{ $cate->description }}
-                                            </p>
+                                            <h5>{{$prod->name}}</h5>
+                                            <small class="float-start"><s>{{$prod->original_price}}</s></small>
+                                            <h4 class="float-end">{{$prod->selling_price}}</h4>
                                         </div>
                                     </div>
                                 </a>

@@ -11,7 +11,7 @@
                 <a href="{{url('/') }}">
                     Home
                 </a> /
-                <a href="{{url('my-orders') }}">
+                <a>
                     My Order
                 </a>
             </h6>
