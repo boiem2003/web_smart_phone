@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 06, 2022 lúc 06:05 PM
+-- Thời gian đã tạo: Th10 07, 2022 lúc 05:10 AM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 7.4.30
 
@@ -41,8 +41,7 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `user_id`, `prod_id`, `prod_qty`, `created_at`, `updated_at`) VALUES
-(1, '2', '1', '1', '2022-10-30 01:08:12', '2022-10-30 01:08:12'),
-(17, '3', '1', '2', '2022-11-05 19:42:53', '2022-11-05 19:42:58');
+(1, '2', '1', '1', '2022-10-30 01:08:12', '2022-10-30 01:08:12');
 
 -- --------------------------------------------------------
 
@@ -59,7 +58,7 @@ CREATE TABLE `categories` (
   `popular` tinyint(4) NOT NULL DEFAULT 0,
   `image` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `meta_descrip` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `meta_descrip` mediumtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `meta_keywords` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -70,11 +69,13 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `description`, `status`, `popular`, `image`, `meta_title`, `meta_descrip`, `meta_keywords`, `created_at`, `updated_at`) VALUES
-(1, 'Apple', 'apple', 'Apple Inc. là một tập đoàn công nghệ đa quốc gia của Mỹ', 0, 1, '1667116405.png', 'Apple Inc', 'Apple Inc. là một tập đoàn công nghệ đa quốc gia của Mỹ có trụ sở chính tại Cupertino, California, chuyên thiết kế, phát triển và bán thiết bị điện tử', 'iPhone, iPhone 14 Pro, iPad,  iPad Air, iPad, Mac, MacBook Pro - MacBook Air - iMac 24 , Watch', '2022-10-30 00:53:25', '2022-10-30 00:53:25'),
-(2, 'Samsung', 'samsung', 'Samsung là một công ty điện tử đa quốc gia của Hàn Quốc', 0, 1, '1667146143.png', 'Samsung', 'Samsung', 'Samsung', '2022-10-30 09:09:03', '2022-10-30 09:09:03'),
-(3, 'OPPO', 'oppo', 'OPPO Electronics Corp là nhà sản xuất thiết bị điện tử, điện thoại di động Android Trung Quốc', 0, 1, '1667146179.png', 'OPPO', 'OPPO', 'OPPO', '2022-10-30 09:09:39', '2022-10-30 09:09:39'),
-(4, 'Xiaomi', 'xiaomi', 'Xiaomi Mi 11 Xiaomi Inc. là một Tập đoàn sản xuất hàng điện tử Trung Quốc có trụ sở tại Thâm Quyến', 0, 1, '1667146253.png', 'Xiaomi Mi', 'Xiaomi Mi', 'Xiaomi Mi', '2022-10-30 09:10:53', '2022-10-30 09:10:53'),
-(5, 'Vivo', 'vivo', 'Vivo là một công ty Trung Quốc chuyên thiết kế, phát triển và sản xuất điện thoại thông minh Android', 0, 1, '1667146310.png', 'Vivo', 'Vivo', 'Vivo', '2022-10-30 09:11:50', '2022-10-30 09:11:50');
+(1, 'Apple', 'apple', 'Điện thoại iPhone đến từ thương hiệu Apple nổi tiếng của thế giới, được sản xuất với tiêu chuẩn của Mỹ, nên có mức giá khá cạnh tranh.', 0, 1, '1667790596.png', 'Apple Inc', 'Apple Inc. là một tập đoàn công nghệ đa quốc gia của Mỹ có trụ sở chính tại Cupertino, California, chuyên thiết kế, phát triển và bán thiết bị điện tử', 'iPhone, iPhone 14 Pro, iPad,  iPad Air, iPad, Mac, MacBook Pro - MacBook Air - iMac 24 , Watch', '2022-10-30 00:53:25', '2022-11-06 20:38:51'),
+(2, 'Samsung', 'samsung', 'Samsung là một công ty điện tử đa quốc gia của Hàn Quốc', 0, 1, '1667790797.png', 'Samsung', 'Samsung', 'Samsung', '2022-10-30 09:09:03', '2022-11-06 20:13:17'),
+(3, 'OPPO', 'oppo', 'OPPO Electronics Corp là nhà sản xuất thiết bị điện tử, điện thoại di động Android Trung Quốc', 0, 1, '1667791101.png', 'OPPO', 'OPPO', 'OPPO', '2022-10-30 09:09:39', '2022-11-06 20:18:21'),
+(4, 'Xiaomi', 'xiaomi', 'Xiaomi Mi 11 Xiaomi Inc. là một Tập đoàn sản xuất hàng điện tử Trung Quốc có trụ sở tại Thâm Quyến', 0, 1, '1667791352.png', 'Xiaomi Mi', 'Xiaomi Mi', 'Xiaomi Mi', '2022-10-30 09:10:53', '2022-11-06 20:22:32'),
+(5, 'Vivo', 'vivo', 'Vivo là một công ty Trung Quốc chuyên thiết kế, phát triển và sản xuất điện thoại thông minh Android', 0, 0, '1667791467.png', 'Vivo', 'Vivo', 'Vivo', '2022-10-30 09:11:50', '2022-11-06 21:00:57'),
+(6, 'OnePlus', 'one-plus', 'Điện thoại OnePlus mang đến cho người dùng những sản phẩm có cấu hình siêu khủng với mức giá rẻ, hấp dẫn đến người sử dụng.', 0, 0, '1667791915.png', 'Điện thoại OnePlus', 'Điện thoại OnePlus mang đến cho người dùng những sản phẩm có cấu hình siêu khủng với mức giá rẻ, hấp dẫn đến người sử dụng.\r\nDo đó các sản phẩm của OnePlus chủ yếu tập trung vào phân khúc \"smartphone cao cấp\".', 'oneplus', '2022-11-06 20:31:55', '2022-11-06 21:01:03'),
+(7, 'Google', 'google', 'Google LLC là một công ty công nghệ đa quốc gia của Mỹ, chuyên về các dịch vụ và sản phẩm liên quan đến Internet, bao gồm các công nghệ quảng cáo trực tuyến, công cụ tìm kiếm, điện toán đám mây, phần mềm và phần cứng.', 0, 1, '1667793613.png', 'google', 'google pixel', 'google, google pixel, pixel', '2022-11-06 21:00:13', '2022-11-06 21:00:13');
 
 -- --------------------------------------------------------
 
@@ -119,8 +120,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (33, '2022_10_30_061513_create_orders_table', 1),
 (34, '2022_11_01_053414_create_wishlists_table', 2),
 (35, '2022_11_01_063232_create_orders_items', 3),
-(36, '2022_11_04_013725_create_ratings_table', 4),
-(40, '2022_11_05_141930_create_reviews_table', 5);
+(41, '2022_11_04_013725_create_ratings_table', 4),
+(42, '2022_11_05_141930_create_reviews_table', 4);
 
 -- --------------------------------------------------------
 
@@ -272,11 +273,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `tax`, `status`, `trending`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
-(1, 1, 'iPhone 13 Pro Max 256GB', 'iphone-13-pro-max-256gb', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện. Ngoại hình không có nhiều đột phá nhưng bên trong là sức mạnh vô địch. Màn hình siêu lớn 6.7 inch hỗ trợ tần số quét 120Hz, chip Apple A15 Bionic hạ gục mọi đối thủ, vượt qua mọi thách thức.', '32990000', '29990000', '1667117230.jpg', 0, '20', 0, 1, 'iPhone 13 Pro Max 256GB', 'iphone 13', 'iPhone 13 Pro Max 256GB', '2022-10-30 01:07:10', '2022-11-06 06:43:27'),
+(1, 1, 'iPhone 13 Pro Max 256GB', 'iphone-13-pro-max-256gb', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện. Ngoại hình không có nhiều đột phá nhưng bên trong là sức mạnh vô địch. Màn hình siêu lớn 6.7 inch hỗ trợ tần số quét 120Hz, chip Apple A15 Bionic hạ gục mọi đối thủ, vượt qua mọi thách thức.', '32990000', '29990000', '1667792434.png', 10, '20', 0, 1, 'iPhone 13 Pro Max 256GB', 'iphone 13', 'iPhone 13 Pro Max 256GB', '2022-10-30 01:07:10', '2022-11-06 20:53:48'),
 (2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'oppo-reno8-4g-8gb-256gb', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 0, 1, 'OPPO Reno8 4G 8GB - 256GB', 'oppo reno', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-11-05 21:04:00'),
 (3, 2, 'Samsung Galaxy Z Fold4 5G 512GB', 'samsung-galaxy-zfold4-5g-512gb', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm, chú ý đến từ sự kiện Unpacked thường niên của Samsung nhờ sở hữu màn hình lớn cùng cơ chế gấp gọn giúp bạn có thể dễ dàng mang theo bên mình đi bất kỳ nơi đâu. Cùng với đó là sự nâng cấp về hiệu năng và phần mềm giúp thiết bị xử lý tốt hầu hết mọi tác vụ từ làm việc, học tập đến giải trí.', '44490000', '41490000', '1667146680.jpg', 100, '10', 0, 1, 'Samsung Galaxy Z Fold4 5G 512GB', 'samsung galaxy', 'Samsung Galaxy Z Fold4 5G 512GB', '2022-10-30 09:18:00', '2022-10-30 09:18:00'),
 (4, 4, 'Xiaomi 12T Pro 12/256GB', 'xiaomi-12t-pro-12-256gb', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 145, '10', 0, 1, 'Xiaomi 12T Pro 12/256GB', 'xiaomi 12t pro', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-11-06 06:40:17'),
-(5, 5, 'Vivo V25 5G', 'vivo-v25-5g', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 0, 1, 'Vivo V25 5G', 'vivo v25', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20');
+(5, 5, 'Vivo V25 5G', 'vivo-v25-5g', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 0, 1, 'Vivo V25 5G', 'vivo v25', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20'),
+(6, 1, 'iPhone 14 Pro Max 256GB', 'iphone-14-pro-max-256gb', 'Màn hình Dynamic Island - Sự biến mất của màn hình tai thỏ thay thế bằng thiết kế viên thuốc, OLED 6,7 inch, hỗ trợ always-on display.\r\n\r\nCấu hình iPhone 14 Pro Max mạnh mẽ, hiệu năng cực khủng từ chipset A16 Bionic.\r\n\r\nLàm chủ công nghệ nhiếp ảnh - Camera sau 48MP, cảm biến TOF sống động.\r\n\r\nPin liền lithium-ion kết hợp cùng công nghệ sạc nhanh cải tiến.', 'iPhone 14 Pro Max có sự cải thiện lớn màn hình so với iPhone 13 Pro Max. Sự khác biệt giữ phiên bản iPhone 14 Pro Max 256GB và bản tiêu chuẩn 128GB chỉ là bộ nhớ trong. Dưới đây là một số cải tiến nổi bật trên iPhone 14 Pro Max mà có thể bạn chưa biết!\r\n\r\nKích thước màn hình iPhone 14 Pro Max vẫn là 6.1 inch tuy nhiên phần “tai thỏ” đã được thay thế bằng một đường cắt hình viên thuốc. Apple gọi đây là Dynamic Island - nơi chứa camera Face ID và một đường cắt hình tròn thứ hai cho camera trước.\r\n\r\nNgoài ra, iPhone 14 Pro Max có tính năng màn hình luôn bật hoạt động (Always-on Display) với tiện ích màn hình khóa mới trên iOS 16. Người dùng có thể xem các thông tin như lời nhắc, sự kiện lịch và thời tiết mà không cần bật máy lên để xem. Thậm chí, có một trạng thái ngủ cho hình nền, trạng thái này sẽ làm tối hình nền để sử dụng ít pin hơn.\r\n\r\niPhone 14 Pro Max được trang bị bộ vi xử lý Apple A16 Bionic. Apple đã tập trung vào hiệu quả sử dụng năng lượng, màn hình và camera với con chip mới của mình. CPU sáu nhân bao gồm hai nhân hiệu suất cao sử dụng năng lượng thấp hơn 20% và bốn nhân tiết kiệm pin chỉ sử dụng một phần ba năng lượng so với chip của các đối thủ cạnh tranh.', '39000000', '38999999', '1667793049.png', 20, '10', 0, 1, 'iPhone 14 Pro Max', 'iphone 14', 'iPhone 14 Pro Max', '2022-11-06 20:50:49', '2022-11-06 20:50:49');
 
 -- --------------------------------------------------------
 
@@ -292,15 +294,6 @@ CREATE TABLE `ratings` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `ratings`
---
-
-INSERT INTO `ratings` (`id`, `user_id`, `prod_id`, `stars_rated`, `created_at`, `updated_at`) VALUES
-(1, '4', '1', '4', '2022-11-04 06:54:33', '2022-11-04 06:54:33'),
-(2, '3', '1', '5', '2022-11-06 04:29:24', '2022-11-06 04:29:31'),
-(3, '1', '1', '1', '2022-11-06 04:40:34', '2022-11-06 04:40:51');
 
 -- --------------------------------------------------------
 
@@ -374,8 +367,6 @@ CREATE TABLE `wishlists` (
 --
 
 INSERT INTO `wishlists` (`id`, `user_id`, `prod_id`, `created_at`, `updated_at`) VALUES
-(6, '3', '3', '2022-11-01 05:19:50', '2022-11-01 05:19:50'),
-(7, '3', '3', '2022-11-01 05:19:54', '2022-11-01 05:19:54'),
 (10, '4', '2', '2022-11-06 06:32:34', '2022-11-06 06:32:34');
 
 --
@@ -478,7 +469,7 @@ ALTER TABLE `carts`
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `failed_jobs`
@@ -490,7 +481,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT cho bảng `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
@@ -514,13 +505,13 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT cho bảng `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `reviews`

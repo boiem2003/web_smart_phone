@@ -12,23 +12,20 @@
             <div class="row">
                 <h2>Featured Products</h2>
                 <div class="owl-carousel featured-carousel owl-theme">
-                @foreach ($trending_category as $trencate)
                     @foreach ($featured_products as $prod)
                         <div class="item">
-                            <a href="{{ url('view-category/'.$trencate->slug.'/'.$prod->slug)}}">
-                            <div class="card ">
-                                <img src="{{ asset('assets/uploads/products/'.$prod->image)}}"  alt="Product image">
-                                <div class="card-body">
-                                    <h5>{{$prod->name}}</h5>
-                                    <Small class="float-start">{{$prod->selling_price}}</small>
-                                    <Small class="float-end"><s>{{$prod->original_price}}</s></small>
+                            <a href="{{ url('view-category/'.$prod->category->slug.'/'.$prod->slug)}}">
+                                <div class="card ">
+                                    <img src="{{ asset('assets/uploads/products/'.$prod->image)}}"  alt="Product image">
+                                    <div class="card-body">
+                                        <h5>{{$prod->name}}</h5>
+                                        <Small class="float-start">{{$prod->selling_price}}</small>
+                                        <Small class="float-end"><s>{{$prod->original_price}}</s></small>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
-                    </div>
-                    
+                            </a>
+                        </div>
                     @endforeach
-                @endforeach
                 </div>
             </div>
         </div>

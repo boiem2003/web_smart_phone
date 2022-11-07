@@ -26,7 +26,7 @@
                         <div class="col-md-3 mb-3">
                             <div class="card ">
                                 <a href="{{ url('view-category/'.$category->slug.'/'.$prod->slug) }}">
-                                    <img src="{{ asset('assets/uploads/products/'.$prod->image)}}"  alt="Product image">
+                                    <img src="{{ asset('assets/uploads/products/'.$prod->image)}}"  alt="Product image" heigth="350px" width="300px">
                                     <div class="card-body">
                                         <h5>{{$prod->name}}</h5>
                                         <Small class="float-start">{{$prod->selling_price}}</small>
