@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 07, 2022 lúc 05:10 AM
+-- Thời gian đã tạo: Th10 07, 2022 lúc 09:29 AM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 7.4.30
 
@@ -273,8 +273,8 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `description`, `original_price`, `selling_price`, `image`, `qty`, `tax`, `status`, `trending`, `meta_title`, `meta_keywords`, `meta_description`, `created_at`, `updated_at`) VALUES
-(1, 1, 'iPhone 13 Pro Max 256GB', 'iphone-13-pro-max-256gb', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện. Ngoại hình không có nhiều đột phá nhưng bên trong là sức mạnh vô địch. Màn hình siêu lớn 6.7 inch hỗ trợ tần số quét 120Hz, chip Apple A15 Bionic hạ gục mọi đối thủ, vượt qua mọi thách thức.', '32990000', '29990000', '1667792434.png', 10, '20', 0, 1, 'iPhone 13 Pro Max 256GB', 'iphone 13', 'iPhone 13 Pro Max 256GB', '2022-10-30 01:07:10', '2022-11-06 20:53:48'),
-(2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'oppo-reno8-4g-8gb-256gb', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 0, 1, 'OPPO Reno8 4G 8GB - 256GB', 'oppo reno', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-11-05 21:04:00'),
+(1, 1, 'iPhone 13 Pro Max 256GB', 'iphone-13-pro-max-256gb', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện', 'Siêu phẩm được mong chờ nhất 2021 – iPhone 13 Pro Max đã chính thức xuất hiện. Ngoại hình không có nhiều đột phá nhưng bên trong là sức mạnh vô địch. Màn hình siêu lớn 6.7 inch hỗ trợ tần số quét 120Hz, chip Apple A15 Bionic hạ gục mọi đối thủ, vượt qua mọi thách thức.', '32990000', '29990000', '1667792434.png', 10, '20', 0, 0, 'iPhone 13 Pro Max', 'iphone 13', 'iPhone 13 Pro Max 256GB', '2022-10-30 01:07:10', '2022-11-07 00:15:25'),
+(2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'oppo-reno8-4g-8gb-256gb', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 0, 1, 'OPPO Reno8 4G 8GB - 256GB', 'oppo reno', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-11-07 00:38:08'),
 (3, 2, 'Samsung Galaxy Z Fold4 5G 512GB', 'samsung-galaxy-zfold4-5g-512gb', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm, chú ý đến từ sự kiện Unpacked thường niên của Samsung nhờ sở hữu màn hình lớn cùng cơ chế gấp gọn giúp bạn có thể dễ dàng mang theo bên mình đi bất kỳ nơi đâu. Cùng với đó là sự nâng cấp về hiệu năng và phần mềm giúp thiết bị xử lý tốt hầu hết mọi tác vụ từ làm việc, học tập đến giải trí.', '44490000', '41490000', '1667146680.jpg', 100, '10', 0, 1, 'Samsung Galaxy Z Fold4 5G 512GB', 'samsung galaxy', 'Samsung Galaxy Z Fold4 5G 512GB', '2022-10-30 09:18:00', '2022-10-30 09:18:00'),
 (4, 4, 'Xiaomi 12T Pro 12/256GB', 'xiaomi-12t-pro-12-256gb', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 145, '10', 0, 1, 'Xiaomi 12T Pro 12/256GB', 'xiaomi 12t pro', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-11-06 06:40:17'),
 (5, 5, 'Vivo V25 5G', 'vivo-v25-5g', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 0, 1, 'Vivo V25 5G', 'vivo v25', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20'),
@@ -295,6 +295,13 @@ CREATE TABLE `ratings` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Đang đổ dữ liệu cho bảng `ratings`
+--
+
+INSERT INTO `ratings` (`id`, `user_id`, `prod_id`, `stars_rated`, `created_at`, `updated_at`) VALUES
+(1, '4', '2', '2', '2022-11-07 00:36:31', '2022-11-07 00:37:08');
+
 -- --------------------------------------------------------
 
 --
@@ -309,6 +316,13 @@ CREATE TABLE `reviews` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `user_id`, `prod_id`, `user_review`, `created_at`, `updated_at`) VALUES
+(1, '4', '2', 'quá tệ tệ tệ', '2022-11-07 00:36:45', '2022-11-07 00:37:00');
 
 -- --------------------------------------------------------
 
@@ -511,13 +525,13 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT cho bảng `ratings`
 --
 ALTER TABLE `ratings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
