@@ -15,11 +15,16 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+<!--
         <li class="nav-item ">
           <a class="nav-link" aria-current="page" href="{{ url('/') }}">Home</a>
         </li>
+-->
         <li class="nav-item ">
             <a class="nav-link" href="{{ url('category') }}">Category</a>
+        </li>
+        <li class="nav-item ">
+            <a class="nav-link" href="{{ url('product') }}">Product</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ url('cart') }}">Cart
@@ -32,8 +37,6 @@
                 <span class="badge badge-pill bg-success wishlist-count">0</span>
             </a>
         </li>
-
-
 <!--
         <li class="nav-item">
           <a class="nav-link" href="#">Pricing</a>
@@ -49,12 +52,13 @@
                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
               </li>
             @endif
-
+<!--
             @if (Route::has('register'))
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
               </li>
             @endif
+-->
           @else
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
