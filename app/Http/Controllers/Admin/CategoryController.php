@@ -13,9 +13,11 @@ class CategoryController extends Controller
         $category = Category::all();
         return view('admin.category.index', compact('category'));
     }
+    
     public function add(){
         return view('admin.category.add');
     }
+    
     public function insert(Request $request){
         $category= new Category();
         if($request -> hasFile ('image')){

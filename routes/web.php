@@ -12,6 +12,7 @@ use App\Models\Product;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\ProfileController;
 use App\Http\Controllers\Frontend\RatingController;
 use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserController;
@@ -57,9 +58,17 @@ Route::middleware(['auth'])->group(function(){
     Route::get('checkout', [CheckoutController::class, 'index']);
     Route::post('place-order', [CheckoutController::class, 'placeorder']);
 
+    //Route profile
+    Route::get('profile', [ProfileController::class, 'index']);
+    //Route::get('insert-profile', [ProfileController::class, 'insert']);
+    Route::get('edit-profile/{id}', [ProfileController::class, 'edit']);
+    Route::put('update-profile/{id}', [ProfileController::class, 'update']);
+
     //Route order
     Route::get('my-orders', [UserController::class, 'index']);
     Route::get('view-order/{id}', [UserController::class, 'view']);
+
+    //Route rating
     Route::get('add-rating', [RatingController::class, 'add']);
 
     //Route review

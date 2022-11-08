@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 07, 2022 lúc 09:29 AM
+-- Thời gian đã tạo: Th10 08, 2022 lúc 03:17 AM
 -- Phiên bản máy phục vụ: 10.4.25-MariaDB
 -- Phiên bản PHP: 7.4.30
 
@@ -166,7 +166,9 @@ INSERT INTO `orders` (`id`, `user_id`, `fname`, `lname`, `email`, `phone`, `addr
 (9, '4', 'userboi', 'boiem', 'adminboi@gmail.com', '123456798', 'sdfsdf', 'fsfsdf', 'sdfsdfsf', 'sdfsdf', 'sfsdfsdf', 'sdfsdfsdf', '16990000', 0, NULL, 'Nhóm 17 1693', '2022-11-06 06:28:13', '2022-11-06 06:28:13'),
 (10, '4', 'userboi', 'boiem', 'adminboi@gmail.com', '123456798', 'sdfsdf', 'fsfsdf', 'sdfsdfsf', 'sdfsdf', 'sfsdfsdf', 'sdfsdfsdf', '17980000', 0, NULL, 'Nhóm 17 3965', '2022-11-06 06:32:42', '2022-11-06 06:32:42'),
 (11, '4', 'userboi', 'boiem', 'adminboi@gmail.com', '123456798', 'sdfsdf', 'fsfsdf', 'sdfsdfsf', 'sdfsdf', 'sfsdfsdf', 'sdfsdfsdf', '84950000', 0, NULL, 'Nhóm 17 1778', '2022-11-06 06:40:17', '2022-11-06 06:40:17'),
-(12, '4', 'userboi', 'boiem', 'adminboi@gmail.com', '123456798', 'sdfsdf', 'fsfsdf', 'sdfsdfsf', 'sdfsdf', 'sfsdfsdf', 'sdfsdfsdf', '59980000', 0, NULL, 'Nhóm 17 9130', '2022-11-06 06:43:27', '2022-11-06 06:43:27');
+(12, '4', 'userboi', 'boiem', 'adminboi@gmail.com', '123456798', 'sdfsdf', 'fsfsdf', 'sdfsdfsf', 'sdfsdf', 'sfsdfsdf', 'sdfsdfsdf', '59980000', 0, NULL, 'Nhóm 17 9130', '2022-11-06 06:43:27', '2022-11-06 06:43:27'),
+(13, '3', 'userboi', 'dfsdf', 'userboi@gmail.com', 'sdfsdf', 'sdfsdf', 'sdfsdf', 'sdfsdf', 'sdsdf', 'sdfdsf', 'sdfsdf', '10490000', 0, NULL, 'Nhóm 17 3029', '2022-11-07 10:54:36', '2022-11-07 10:54:36'),
+(14, '3', 'userboi', 'dfsdf', 'userboi@gmail.com', '795486832', 'sdfsdf', 'sdfsdf', 'sdfsdf', 'sdsdf', 'sdfdsf', '777777', '10490000', 0, NULL, 'Nhóm 17 7929', '2022-11-07 10:54:59', '2022-11-07 10:54:59');
 
 -- --------------------------------------------------------
 
@@ -202,7 +204,9 @@ INSERT INTO `orders_items` (`id`, `order_id`, `prod_id`, `qty`, `price`, `create
 (11, '9', '4', '1', '16990000', '2022-11-06 06:28:13', '2022-11-06 06:28:13'),
 (12, '10', '2', '2', '8990000', '2022-11-06 06:32:42', '2022-11-06 06:32:42'),
 (13, '11', '4', '5', '16990000', '2022-11-06 06:40:17', '2022-11-06 06:40:17'),
-(14, '12', '1', '2', '29990000', '2022-11-06 06:43:27', '2022-11-06 06:43:27');
+(14, '12', '1', '2', '29990000', '2022-11-06 06:43:27', '2022-11-06 06:43:27'),
+(15, '13', '5', '1', '10490000', '2022-11-07 10:54:36', '2022-11-07 10:54:36'),
+(16, '14', '5', '1', '10490000', '2022-11-07 10:54:59', '2022-11-07 10:54:59');
 
 -- --------------------------------------------------------
 
@@ -277,7 +281,7 @@ INSERT INTO `products` (`id`, `cate_id`, `name`, `slug`, `small_description`, `d
 (2, 3, 'OPPO Reno8 4G 8GB - 256GB', 'oppo-reno8-4g-8gb-256gb', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ.', 'Với OPPO Reno8, trải nghiệm nhiếp ảnh trên smartphone đã đột phá ranh giới cũ. Sự kết hợp giữa cảm biến camera siêu nhạy IMX709 với ống kính Micro30x giúp chiếc Reno mới nhất hóa thân thành một công cụ chụp ảnh chuyên nghiệp, một chuyên gia chụp chân dung hàng đầu.', '8990000', '8990000', '1667146582.jpg', 100, '10', 0, 1, 'OPPO Reno8 4G 8GB - 256GB', 'oppo reno', 'OPPO Reno8 4G 8GB - 256GB', '2022-10-30 09:16:22', '2022-11-07 00:38:08'),
 (3, 2, 'Samsung Galaxy Z Fold4 5G 512GB', 'samsung-galaxy-zfold4-5g-512gb', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm', 'Galaxy Z Fold4 có lẽ là cái tên nhận được nhiều sự quan tâm, chú ý đến từ sự kiện Unpacked thường niên của Samsung nhờ sở hữu màn hình lớn cùng cơ chế gấp gọn giúp bạn có thể dễ dàng mang theo bên mình đi bất kỳ nơi đâu. Cùng với đó là sự nâng cấp về hiệu năng và phần mềm giúp thiết bị xử lý tốt hầu hết mọi tác vụ từ làm việc, học tập đến giải trí.', '44490000', '41490000', '1667146680.jpg', 100, '10', 0, 1, 'Samsung Galaxy Z Fold4 5G 512GB', 'samsung galaxy', 'Samsung Galaxy Z Fold4 5G 512GB', '2022-10-30 09:18:00', '2022-10-30 09:18:00'),
 (4, 4, 'Xiaomi 12T Pro 12/256GB', 'xiaomi-12t-pro-12-256gb', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp', 'Xiaomi 12T Pro - ứng cử viên sáng giá trong phân khúc cận cao cấp. Không chỉ khoác trên mình bộ cánh sang trọng và cao cấp, 12T Pro còn sở hữu thông số kỹ thuật vô cùng ấn tượng. Đặc biệt là khả năng nhiếp ảnh đỉnh cao với camera lên tới 200MP, màn hình cực sắc nét và một trái tim mạnh mẽ.', '16990000', '16990000', '1667146754.jpg', 145, '10', 0, 1, 'Xiaomi 12T Pro 12/256GB', 'xiaomi 12t pro', 'Xiaomi 12T Pro 12/256GB', '2022-10-30 09:19:14', '2022-11-06 06:40:17'),
-(5, 5, 'Vivo V25 5G', 'vivo-v25-5g', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 152, '10', 0, 1, 'Vivo V25 5G', 'vivo v25', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-10-30 09:20:20'),
+(5, 5, 'Vivo V25 5G', 'vivo-v25-5g', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng', 'Năm 2022 dường như là một năm bùng nổ của nhà Vivo khi mang đến cho người dùng nhiều sản phẩm với thiết kế và thông số cấu hình vô cùng ấn tượng. Nổi bật trong số đó là Vivo V25 5G mới trình làng vào tháng 10 vừa qua. Với vẻ ngoại bắt mắt cùng hiệu năng mạnh mẽ, sản phẩm hứa hẹn sẽ gây sốt thị trường trong dịp cuối năm nay.', '10490000', '10490000', '1667146820.jpg', 150, '10', 0, 1, 'Vivo V25 5G', 'vivo v25', 'Vivo V25 5G', '2022-10-30 09:20:20', '2022-11-07 10:54:59'),
 (6, 1, 'iPhone 14 Pro Max 256GB', 'iphone-14-pro-max-256gb', 'Màn hình Dynamic Island - Sự biến mất của màn hình tai thỏ thay thế bằng thiết kế viên thuốc, OLED 6,7 inch, hỗ trợ always-on display.\r\n\r\nCấu hình iPhone 14 Pro Max mạnh mẽ, hiệu năng cực khủng từ chipset A16 Bionic.\r\n\r\nLàm chủ công nghệ nhiếp ảnh - Camera sau 48MP, cảm biến TOF sống động.\r\n\r\nPin liền lithium-ion kết hợp cùng công nghệ sạc nhanh cải tiến.', 'iPhone 14 Pro Max có sự cải thiện lớn màn hình so với iPhone 13 Pro Max. Sự khác biệt giữ phiên bản iPhone 14 Pro Max 256GB và bản tiêu chuẩn 128GB chỉ là bộ nhớ trong. Dưới đây là một số cải tiến nổi bật trên iPhone 14 Pro Max mà có thể bạn chưa biết!\r\n\r\nKích thước màn hình iPhone 14 Pro Max vẫn là 6.1 inch tuy nhiên phần “tai thỏ” đã được thay thế bằng một đường cắt hình viên thuốc. Apple gọi đây là Dynamic Island - nơi chứa camera Face ID và một đường cắt hình tròn thứ hai cho camera trước.\r\n\r\nNgoài ra, iPhone 14 Pro Max có tính năng màn hình luôn bật hoạt động (Always-on Display) với tiện ích màn hình khóa mới trên iOS 16. Người dùng có thể xem các thông tin như lời nhắc, sự kiện lịch và thời tiết mà không cần bật máy lên để xem. Thậm chí, có một trạng thái ngủ cho hình nền, trạng thái này sẽ làm tối hình nền để sử dụng ít pin hơn.\r\n\r\niPhone 14 Pro Max được trang bị bộ vi xử lý Apple A16 Bionic. Apple đã tập trung vào hiệu quả sử dụng năng lượng, màn hình và camera với con chip mới của mình. CPU sáu nhân bao gồm hai nhân hiệu suất cao sử dụng năng lượng thấp hơn 20% và bốn nhân tiết kiệm pin chỉ sử dụng một phần ba năng lượng so với chip của các đối thủ cạnh tranh.', '39000000', '38999999', '1667793049.png', 20, '10', 0, 1, 'iPhone 14 Pro Max', 'iphone 14', 'iPhone 14 Pro Max', '2022-11-06 20:50:49', '2022-11-06 20:50:49');
 
 -- --------------------------------------------------------
@@ -357,7 +361,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `lname`, `phone`, `address1`, `address2`, `city`, `state`, `country`, `pincode`, `role_as`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Thành', 'user@user.com', NULL, '$2y$10$iJPzj3l9ticQpk7Tujx2n.dxH37zuujQg9ScawlfxmM5UU.TQxGMa', '', 0, '', '', '', '', '', '', 0, NULL, '2022-10-30 00:36:51', '2022-10-30 00:36:51'),
 (2, 'Nhóm 17', 'admin@gmail.com', NULL, '$2y$10$BpBjeCpU8YqSboILsHAJaec2jyZOOtUoddEDgeWAinQgEzTQEGI5C', '', 0, '', '', '', '', '', '', 1, NULL, '2022-10-30 00:38:51', '2022-10-30 00:38:51'),
-(3, 'userboi', 'userboi@gmail.com', NULL, '$2y$10$FfgVSHd2DvSdMVy9vgTvDOeaHOKdkvAOyp8KFXEpGOPp2DIzVFL/C', '', 0, '', '', '', '', '', '', 0, NULL, '2022-10-30 09:46:13', '2022-10-30 09:46:13'),
+(3, 'userboi', 'userboi@gmail.com', NULL, '$2y$10$FfgVSHd2DvSdMVy9vgTvDOeaHOKdkvAOyp8KFXEpGOPp2DIzVFL/C', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2022-10-30 09:46:13', '2022-11-07 10:57:20'),
 (4, 'userboi', 'adminboi@gmail.com', NULL, '$2y$10$ySoZqwhxMiTmP7Y9.kpK6uxejIuVp2rPQUCUviduHEluCzVlz0TRC', 'boiem', 123456798, 'sdfsdf', 'fsfsdf', 'sdfsdfsf', 'sdfsdf', 'sfsdfsdf', 'sdfsdfsdf', 1, NULL, '2022-10-31 00:32:33', '2022-11-06 06:22:21'),
 (5, 'abc', 'abc@gmail.com', NULL, '$2y$10$HTctKGFJmuVuPY0CBj1euukBD00LrwxY3VxoSZLUhXxhKaHHR8FIe', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2022-10-31 06:54:59', '2022-10-31 06:54:59'),
 (6, 'boi', 'boipham2003@gmail.com', NULL, '$2y$10$ymp3CCQRsMnvYaDTSmkxv.Yhnwx/I.p6M8DwuV4lLbWkVrB5526KO', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, '2022-11-06 07:11:00', '2022-11-06 07:11:00');
@@ -477,7 +481,7 @@ ALTER TABLE `wishlists`
 -- AUTO_INCREMENT cho bảng `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -501,13 +505,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `orders_items`
 --
 ALTER TABLE `orders_items`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT cho bảng `personal_access_tokens`
