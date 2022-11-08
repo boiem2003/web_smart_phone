@@ -29,7 +29,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-4 mt-3">
-                                <label for="">Name</label>
+                                <label for="">First Name</label>
                                 <div class="form-control">{{ $users->name }}</div>
                             </div>
                             <div class="col-md-4 mt-3">

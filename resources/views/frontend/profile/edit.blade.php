@@ -30,12 +30,12 @@
                             @method('PUT')
                             <div class="row">
                                 <div class="col-md-4 mb-3">
-                                    <label for="">Name</label>
-                                    <div class="form-control">{{ $users->name }}</div>
+                                <label for="">First Name</label>
+                                    <input type="text" value="{{ $users->name }}" class="form-control" name="name">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">Last Name</label>
-                                    <input type="text" value="{{ $users->lname }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->lname }}" class="form-control" name="lname">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">Email</label>
@@ -43,31 +43,31 @@
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">Phone</label>
-                                    <input type="text" value="{{ $users->phone }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->phone }}" class="form-control" name="phone">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">Address 1</label>
-                                    <input type="text" value="{{ $users->address1 }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->address1 }}" class="form-control" name="address1">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">Address 2</label>
-                                    <input type="text" value="{{ $users->address2 }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->address2 }}" class="form-control" name="address2">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">City</label>
-                                    <input type="text" value="{{ $users->city }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->city }}" class="form-control" name="city">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">State</label>
-                                    <input type="text" value="{{ $users->state }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->state }}" class="form-control" name="state">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">Country</label>
-                                    <input type="text" value="{{ $users->country }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->country }}" class="form-control" name="country">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label for="">Pin Code</label>
-                                    <input type="text" value="{{ $users->pincode }}" class="form-control" name="name">
+                                    <input type="text" value="{{ $users->pincode }}" class="form-control" name="pincode">
                                 </div>
                                 <div class="col-md-12">
                                     <button type="submit " class="btn btn-primary">Submit</button>

@@ -15,21 +15,6 @@ class ProfileController extends Controller
         return view('frontend.profile.index', compact('users'));
     }
 
-    public function insert(Request $request, $id)
-    {
-        $users= new User();
-        $users->lname= $request->input('last_name');
-        $users->phone= $request->input('phone');
-        $users->address1= $request->input('address1');
-        $users->address2= $request->input('address2');
-        $users->city= $request->input('city');
-        $users->state= $request->input('state');
-        $users->country= $request->input('country');
-        $users->pincode= $request->input('pin_code');
-        $users->save();
-        return redirect('/profile') -> with('status', "Category Updated Successfully");
-    }
-
     public function edit($id)
     {
         $users = User::find($id);
@@ -46,8 +31,8 @@ class ProfileController extends Controller
         $users->city= $request->input('city');
         $users->state= $request->input('state');
         $users->country= $request->input('country');
-        $users->pincode= $request->input('pin_code');
+        $users->pincode= $request->input('pincode');
         $users->update();
-        return redirect('/profile') -> with('status', "Category Updated Successfully");
+        return redirect('/profile') -> with('status', "Profile Updated Successfully");
     }
 }
