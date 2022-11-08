@@ -59,6 +59,8 @@ class CategoryController extends Controller
             $filename= time().'.'.$ext;
             $file->move('assets/uploads/category',$filename);
             $category->image=$filename;
+        }else{
+            $category->image=$request -> hasfile('image')+"123";
         }
         $category->name= $request->input('name');
         $category->slug= $request->input('slug');
