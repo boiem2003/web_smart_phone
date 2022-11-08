@@ -22,7 +22,7 @@ class CartController extends Controller
             {
                 if(Cart::where('prod_id', $product_id)->where('user_id', Auth::id())->exists())
                 {
-                    return response()->json(['status'=> $prod_check->name."Already added to cart"]);
+                    return response()->json(['status'=> $prod_check->name." Already added to cart"]);
                 }
                 else
                 {

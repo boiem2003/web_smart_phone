@@ -12,6 +12,9 @@ use App\Models\Product;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\ProfileController;
+use App\Http\Controllers\Frontend\RatingController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\WishlistController;
 
@@ -32,9 +35,12 @@ use App\Http\Controllers\Frontend\WishlistController;
 
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('category', [FrontendController::class, 'category']);
+Route::get('product', [FrontendController::class, 'product']);
 Route::get('view-category/{slug}', [FrontendController::class, 'viewcategory']);
 Route::get('view-category/{cate_slug}/{prod_slug}', [FrontendController::class, 'productview']);
 
+Route::get('product-list', [FrontendController::class, 'productlistAjax']);
+Route::post('searchproduct', [FrontendController::class, 'searchProduct']);
 Auth::routes();
 
 Route::get('load-cart-data', [CartController::class, 'cartcount']);
@@ -52,8 +58,24 @@ Route::middleware(['auth'])->group(function(){
     Route::get('checkout', [CheckoutController::class, 'index']);
     Route::post('place-order', [CheckoutController::class, 'placeorder']);
 
+    //Route profile
+    Route::get('profile', [ProfileController::class, 'index']);
+    //Route::get('insert-profile', [ProfileController::class, 'insert']);
+    Route::get('edit-profile/{id}', [ProfileController::class, 'edit']);
+    Route::put('update-profile/{id}', [ProfileController::class, 'update']);
+
+    //Route order
     Route::get('my-orders', [UserController::class, 'index']);
     Route::get('view-order/{id}', [UserController::class, 'view']);
+
+    //Route rating
+    Route::get('add-rating', [RatingController::class, 'add']);
+
+    //Route review
+    Route::get('add-review/{product_slug}/userreview', [ReviewController::class, 'add']);
+    Route::post('add-review', [ReviewController::class, 'create']);
+    Route::get('edit-review/{product_slug}/userreview', [ReviewController::class, 'edit']);
+    Route::put('update-review', [ReviewController::class, 'update']);
 
     //Route wishlist
     Route::get('wishlist',[WishlistController::class, 'index']);
@@ -68,7 +90,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('add-category', 'Admin\CategoryController@add');
     Route::put('insert-category', 'Admin\CategoryController@insert');
     Route::get('edit-category/{id}', [CategoryController::class , 'edit']);
-    Route::get('update-category/{id}', [CategoryController::class, 'update']);
+    Route::put('update-category/{id}', [CategoryController::class, 'update']);
     Route::get('delete-category/{id}', [CategoryController::class , 'destroy']);
 
     // Products
@@ -76,7 +98,7 @@ Route::middleware(['auth','isAdmin'])->group(function () {
     Route::get('add-products', [ProductController::class, 'add']);
     Route::put('insert-product', [ProductController::class, 'insert']);
     Route::get('edit-product/{id}', [ProductController::class, 'edit']);
-    Route::get('update-product/{id}', [ProductController::class, 'update']);
+    Route::put('update-product/{id}', [ProductController::class, 'update']);
     Route::get('delete-product/{id}', [ProductController::class, 'destroy']);
 
     //Orders

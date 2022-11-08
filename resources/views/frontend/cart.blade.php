@@ -11,7 +11,7 @@
             <a href="{{url('/') }}">
                 Home
             </a> /
-            <a href="{{url('cart') }}">
+            <a>
                 Cart
             </a>
           </h6>
@@ -19,7 +19,7 @@
 </div>
 
 <div class="container my-5">
-    <div class="card shadow">
+    <div class="card shadow cartitems">
         @if($cartitems->count() >0)
             <div class="card-body">
                 @php $total = 0; @endphp
@@ -36,7 +36,7 @@
                         </div>
                         <div class="col-md-3 my-auto">
                             <input type="hidden" class="prod_id" value="{{ $item->prod_id }}">
-                            @if($item->products->qty > $item->prod_qty)
+                            @if($item->products->qty >= $item->prod_qty)
                                 <label for="Quantity">Quantity</label>
                                 <div class="input-group text-center mb-3" style="width: 130px;">
                                     <button class="input-group-text changeQuantity decrement-btn">-</button>
@@ -61,7 +61,7 @@
             </div>
         @else
             <div class="card-body text-center">
-                <h2>Your <i class="fa fa-shopping-cart"></i> Cart is empty</h2>
+                <h2><i class="fa fa-shopping-cart"></i> Your Cart is empty</h2>
                 <a href="{{ url('category') }}" class="btn btn-outline-primary float-end">Continue Shopping</a>
             </div>
         @endif

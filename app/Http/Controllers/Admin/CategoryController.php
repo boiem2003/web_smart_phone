@@ -13,9 +13,11 @@ class CategoryController extends Controller
         $category = Category::all();
         return view('admin.category.index', compact('category'));
     }
+    
     public function add(){
         return view('admin.category.add');
     }
+    
     public function insert(Request $request){
         $category= new Category();
         if($request -> hasFile ('image')){
@@ -36,7 +38,7 @@ class CategoryController extends Controller
         $category->meta_keywords= $request->input('meta_keywords');
         $category->meta_descrip= $request->input('meta_description');
         $category->save();
-        return redirect('/dashboard')->with('status', "Category Added Successfully");
+        return redirect('/categories')->with('status', "Category Added Successfully");
     }
 
     public function edit($id)
@@ -71,7 +73,7 @@ class CategoryController extends Controller
         $category->meta_keywords= $request->input('meta_keywords');
         $category->meta_descrip= $request->input('meta_description');
         $category->update();
-        return redirect('dashboard') -> with('status', "Category Updated Successfully");
+        return redirect('/categories') -> with('status', "Category Updated Successfully");
     }
     public function destroy($id)
     {
@@ -83,6 +85,6 @@ class CategoryController extends Controller
             }
         }
         $category->delete();
-        return redirect('categories') -> with('status',"Category Delete Successfully");
+        return redirect('/categories') -> with('status',"Category Delete Successfully");
     }
 }
