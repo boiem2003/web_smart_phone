@@ -21,7 +21,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>User Details
+                        <h4>My Profile
                             <a href="{{ url('edit-profile/'.$users->id) }}" class="btn btn-primary btn-sm float-end">Edit</a>
                         </h4>
                         <hr>

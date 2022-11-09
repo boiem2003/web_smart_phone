@@ -76,26 +76,33 @@
                         <div class="card-body">
                             <h6>Order Details</h6>
                             <hr>
-                            <table class="table table-striped table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Quantity</th>
-                                        <th>Price</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($cartitems as $item)
+                            @if($cartitems->count() > 0)
+                                <table class="table table-striped table-bordered">
+                                    <thead>
                                         <tr>
-                                            <td>{{ $item->products->name }}</td>
-                                            <td>{{ $item->prod_qty }}</td>
-                                            <td>{{ $item->products->selling_price }}</td>
+                                            <th>Name</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
                                         </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                            <hr>
-                            <button type="submit" class="btn btn-primary w-100">Place Order | COD</button>
+                                    </thead>
+                                    <tbody>
+                                        @php $total = 0;@endphp
+                                        @foreach ($cartitems as $item)
+                                            <tr>
+                                                @php $total += ($item->prodcuts->selling_price * $item->prod_qty) @endphp
+                                                <td>{{ $item->products->name }}</td>
+                                                <td>{{ $item->prod_qty }}</td>
+                                                <td>{{ $item->products->selling_price }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <h6 class="px-2">Grand Total <span class="float-end">{{$total}} VND </span></h6>
+                                <hr>
+                                <button type="submit" class="btn btn-primary w-100">Place Order | COD</button>
+                            @else
+                                <h4 class="text-center">No products in cart</h4>
+                            @endif
                         </div>
                     </div>
                 </div>
