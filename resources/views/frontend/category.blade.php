@@ -24,15 +24,15 @@
                     <h2>All Categories</h2>
                     <div class="row">
                         @foreach ($category as $cate)
-                            <div class="col-md-3 md-3">
+                            <div class="col-md-2 mt-4">
                                 <a href="{{ url('view-category/'.$cate->slug)}}">
                                     <div class="card">
                                         <img src="{{ asset('assets/uploads/category/'.$cate->image)}}"  alt="Category image">
                                         <div class="card-body">
-                                            <h5>{{$cate->name}}</h5>
+                                            <!-- <h5>{{$cate->name}}</h5>
                                             <p>
                                                 {{ $cate->description }}
-                                            </p>
+                                            </p> -->
                                         </div>
                                     </div>
                                 </a>

@@ -23,9 +23,9 @@
                                 <div class="card ">
                                     <img src="{{ asset('assets/uploads/products/'.$prod->image)}}"  alt="Product image">
                                     <div class="card-body">
-                                        <h5>{{$prod->name}}</h5>
-                                        <small class="float-start"><s>{{$prod->original_price}}</s></small>
-                                        <h4 class="float-end">{{$prod->selling_price}}</h4>
+                                    <h5 style="display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;">{{$prod->name}}</h5>
+                                        <small class="float-start"><s>{{$prod->original_price}}₫</s></small>
+                                        <h4 class="float-end">{{$prod->selling_price}}₫</h4>
                                     </div>
                                 </div>
                             </a>
@@ -52,10 +52,10 @@
                                 <div class="card">
                                     <img src="{{ asset('assets/uploads/category/'.$trencate->image)}}"  alt="Category image">
                                     <div class="card-body">
-                                        <h5>{{$trencate->name}}</h5>
+                                        <!-- <h5>{{$trencate->name}}</h5>
                                         <p>
                                             {{ $trencate->description }}
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </a>
