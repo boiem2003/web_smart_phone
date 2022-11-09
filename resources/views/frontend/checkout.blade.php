@@ -89,7 +89,7 @@
                                         @php $total = 0;@endphp
                                         @foreach ($cartitems as $item)
                                             <tr>
-                                                @php $total += ($item->prodcuts->selling_price * $item->prod_qty) @endphp
+                                                @php $total += ($item->products->selling_price * $item->prod_qty) @endphp
                                                 <td>{{ $item->products->name }}</td>
                                                 <td>{{ $item->prod_qty }}</td>
                                                 <td>{{ $item->products->selling_price }}</td>
