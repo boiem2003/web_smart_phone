@@ -12,8 +12,9 @@
                     Home
                 </a> /
                 <a href="{{url('cart') }}">
-                    Checkout
-                </a>
+                    Cart
+                </a> /
+                <a>Check Out</a>
             </h6>
         </div>
     </div>

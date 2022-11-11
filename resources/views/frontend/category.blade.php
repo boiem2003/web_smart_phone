@@ -28,12 +28,12 @@
                                 <a href="{{ url('view-category/'.$cate->slug)}}">
                                     <div class="card">
                                         <img src="{{ asset('assets/uploads/category/'.$cate->image)}}"  alt="Category image">
-                                        <div class="card-body">
-                                            <!-- <h5>{{$cate->name}}</h5>
+                                        <!--<div class="card-body">
+                                             <h5>{{$cate->name}}</h5>
                                             <p>
                                                 {{ $cate->description }}
-                                            </p> -->
-                                        </div>
+                                            </p> 
+                                        </div>-->
                                     </div>
                                 </a>
                             </div>
