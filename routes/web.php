@@ -79,6 +79,10 @@ Route::middleware(['auth'])->group(function(){
 
     //Route wishlist
     Route::get('wishlist',[WishlistController::class, 'index']);
+
+    //Route payment
+    Route::post('vnpay_payment', [CheckoutController::class, 'vnpay']);
+    Route::post('momo_payment', [CheckoutController::class, 'momo']);
 });
 
 
