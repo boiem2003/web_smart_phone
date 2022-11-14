@@ -29,7 +29,7 @@
                             </td>
                             <td>
                                 <a href="{{ url('edit-product/'.$item->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                <a href="{{ url('delete-product/'.$item->id) }}" class="btn btn-primary btn-sm">Delete</a>
+                                <a href="{{ url('delete-product/'.$item->id) }}" class="btn btn-danger btn-sm">Delete</a>
                             </td>
                         </tr>
                     @endforeach
