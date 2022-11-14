@@ -13,7 +13,9 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Authorities</th>
                         <th>Action</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -23,6 +25,7 @@
                             <td>{{ $item -> name }}</td>
                             <td>{{ $item -> email }}</td>
                             <td>{{ $item -> phone }}</td>
+                            <td>{{ $item -> role_as }}</td>
                             <td>
                                 <a href="{{ url('view-user/'.$item->id) }}" class="btn btn-primary btn-sm">View</a>
                             </td>
