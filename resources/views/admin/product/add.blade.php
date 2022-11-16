@@ -1,4 +1,9 @@
-@extends('layouts.admin');
+@extends('layouts.admin')
+
+@section('title')
+    Add Product
+@endsection
+
 @section('content')
     <div class="card">
         <div class="card-header">

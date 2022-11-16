@@ -1,7 +1,7 @@
 @extends('layouts.admin');
 
 @section('title')
-    Orders
+    Order History
 @endsection
 
 @section('content')

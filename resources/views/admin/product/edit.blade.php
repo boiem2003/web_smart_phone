@@ -1,4 +1,7 @@
-@extends('layouts.admin');
+@extends('layouts.admin')
+
+@section('title', $products->name)
+
 @section('content')
     <div class="card">
         <div class="card-header">

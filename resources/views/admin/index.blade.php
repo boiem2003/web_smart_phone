@@ -1,4 +1,9 @@
-@extends('layouts.admin');
+@extends('layouts.admin')
+
+@section('title')
+    Dashboard
+@endsection
+
 @section('content')
     <div class="container-fluid px-4">
         <h1 class="mt-4">TEAM 17</h1>

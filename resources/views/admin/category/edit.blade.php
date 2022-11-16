@@ -1,5 +1,7 @@
 @extends('layouts.admin');
 
+@section('title',$category->name)
+
 @section('content')
     <div class="card">
         <div class="card-header">

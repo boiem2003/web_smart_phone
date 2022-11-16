@@ -1,4 +1,9 @@
-@extends('layouts.admin');
+@extends('layouts.admin')
+
+@section('title')
+    Account Details
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row">
