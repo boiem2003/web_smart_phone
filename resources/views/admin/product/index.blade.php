@@ -13,6 +13,7 @@
                         <th>Category</th>
                         <th>Name</th>
                         <th>Selling Price</th>
+                        <th>Quantity</th>
                         <th>Image</th>
                         <th>Action</th>
                     </tr>
@@ -24,6 +25,7 @@
                             <td>{{ $item -> category -> name }}</td>
                             <td>{{ $item -> name }}</td>
                             <td>{{ $item -> selling_price }}</td>
+                            <td>{{ $item -> qty }}</td>
                             <td>
                                 <img src="{{ asset('assets/uploads/products/'.$item->image) }}" class="cate-image" alt="Image Here">
                             </td>
